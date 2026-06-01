@@ -1,0 +1,207 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Futura', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    width: fit-content;
+    font-size: var(--font-size-h3);
+    /* font-family: "Poppins-Medium"; */
+    font-family: 'Futura', sans-serif;
+    font-weight: 600;
+    background-color: #ffffff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 1rem;
+    color: black;
+}
+.logo span {
+    color: var(--color-alt);
+}
+
+.signup_container {
+    width: 100%;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 2rem; */
+}
+.signup_row:nth-child(1) {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 95vh;
+    background-color: var(--color-alt);
+    border-radius: 5px;
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+} 
+.signup_row:nth-child(1)::before {
+    content: url('../assets/images/vector3.svg');
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.1;
+}
+.auth_image {
+    width: 100%;
+    height: 100% !important;
+    overflow: hidden;
+    border-radius: 5px;
+    display: none;
+}
+.auth_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.auth_body {
+    padding: 5rem;
+    display: grid;
+    position: relative;
+    gap: 1rem;
+}
+.auth_body p {
+    color: white !important;
+    font-size: 14px;
+}
+.auth_footer {
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    place-items: center;
+}
+.auth_footer p {
+    font-size: 14px;
+    color: white;
+}
+.signup_row:nth-child(2) {
+    padding: 5rem;
+    height: fit-content;
+    display: grid;
+    gap: 1rem;
+}
+.form_container {
+    width: 60% !important;
+    height: 100%;
+}
+h2 {
+    font-size: 1.5rem !important;
+    font-weight: 800;
+}
+p {
+    color: #888;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+form {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.form-group {
+    display: grid;
+    gap: 5px;
+}
+.input-container {
+    width: 100%;
+    position: relative;
+}
+.input-container span {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: 8px;
+    /* width: 100%;
+    height: 100%; */
+    color: #888;
+    font-size: 24px;
+    transition: .2s ease-in;
+    cursor: pointer;
+    border: none !important;
+    /* border: 1px solid #eee; */
+}
+.input-container span:hover {
+    color: var(--color-alt);
+    border: 1px solid #eee !important;
+    /* outline-offset: 20px; */
+    /* outline-color: rgba(1, 1, 85, 0.295); */
+}
+label {
+    color: #555;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+input {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #555;
+    border-radius: 5px;
+    border: 1px solid #f4f4f4;
+    font-family: 'Futura', sans-serif;
+}
+button,
+form > a {
+    text-decoration: none;
+    color: #fff;
+    width: fit-content;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px !important;
+    border: 1px solid var(--color-alt);
+    background-color: var(--color-alt);
+    transition: all .2s ease;
+    margin-top: 1rem;
+}
+form > a:hover {
+    color: var(--color-alt);
+    background-color: transparent;
+    border: 1px solid var(--color-alt);
+}
+.redirectory p {
+    font-size: 14px;
+    color: #333;
+}
+
+@media (max-width: 576px) {
+    .signup_container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .auth_body {
+        padding: 1rem;
+    }
+    .signup_row:nth-child(1) {
+        min-height: 50vh;
+    }
+    .signup_row:nth-child(2) {
+        padding: 1rem 0;
+    }
+    .form_container {
+        width: 100% !important;
+    }
+}

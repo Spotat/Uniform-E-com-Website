@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compliance & Tax Dashboard</title>
+  <link rel="stylesheet" href="../static/styles/compliance.css">
+  <link rel="stylesheet" href="../static/styles/fonts.css">
+  <link rel="stylesheet" href="../static/styles/components.css">
+  <link rel="stylesheet" href="../static/assets/icons/regular-icon-font-free/lineicons.css">
+</head>
+<body>
+  <header>
+    <h1>Compliance & Tax Dashboard</h1>
+  </header>
+
+    <div class="dash-container">
+        <h2>Compliance Stats</h2>
+        <div class="dash_analytics">
+            <div class="analytics_card">
+                <span class="lni lni-dollar"></span>
+                <div class="card_body">
+                    <h3>eTims Status</h3>
+                    <p>Connected</p>
+                </div>
+            </div>
+            <div class="analytics_card">
+                <span class="lni lni-basket-shopping-3"></span>
+                <div class="card_body">
+                    <h3>Pending invoices</h3>
+                    <p>3</p>
+                </div>
+            </div>
+            <div class="analytics_card">
+                <span class="lni lni-file-multiple"></span>
+                <div class="card_body">
+                    <h3>Alerts</h3>
+                    <p>0</p>
+                </div>
+            </div>
+            <!-- <div class="analytics_card">
+                <span class="lni lni-user-multiple-4"></span>
+                <div class="card_body">
+                    <h3>Customers</h3>
+                    <p>789</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="status-bar" style="display: none;">
+        <div>✅ eTIMS Status: Connected</div>
+        <div>📄 Pending Invoices: <span id="pendingCount">3</span></div>
+        <div>⚠️ Alerts: <span id="alertsCount">0</span></div>
+    </div>
+
+    <section class="panel-section">
+        <h2>eTIMS Management</h2>
+        <div class="panel-container">
+            <div class="panel">
+                <h2>Invoice Management</h2>
+                <button class="btn" onclick="generateInvoice()">Generate New Invoice</button>
+                <button class="btn" onclick="uploadInvoice()">Upload Invoice</button>
+                <div id="invoiceLog"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Compliance Dashboard</h2>
+                <p>Compliance Rate: <strong id="complianceRate">98%</strong></p>
+                <p>Next Submission Deadline: 15/06/2026</p>
+            </div>
+
+            <div class="panel">
+                <h2>Audit Trail</h2>
+                <ul id="auditTrail">
+                    <li>Invoice #123 transmitted on 01/06/2026</li>
+                    <li>Invoice #124 transmitted on 01/06/2026</li>
+                </ul>
+            </div>
+
+            <div class="panel" style="display: none;">
+                <h2>Analytics</h2>
+                <canvas id="taxChart" width="300" height="200"></canvas>
+            </div>
+        </div>
+    </section>
+
+  <footer>
+    <p>Help & Support | System Logs | User Permissions</p>
+  </footer>
+<script>
+    const API_BASE = "https://api.kra.go.ke/etims"; // Example endpoint
+
+    async function checkStatus() {
+      try {
+        let res = await fetch(`${API_BASE}/status`);
+        let data = await res.json();
+        document.getElementById('etimsStatus').textContent = 
+          data.connected ? "✅ eTIMS Connected" : "❌ eTIMS Disconnected";
+      } catch (err) {
+        document.getElementById('etimsStatus').textContent = "⚠️ Connection Error";
+      }
+    }
+
+    async function generateInvoice() {
+      try {
+        let res = await fetch(`${API_BASE}/invoices`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount: 5000, customer: "ABC Ltd" })
+        });
+        let data = await res.json();
+        const log = document.getElementById('invoiceLog');
+        log.innerHTML += `<p>Invoice #${data.id} sent to KRA.</p>`;
+        updateAuditTrail(data);
+      } catch (err) {
+        alert("Error generating invoice.");
+      }
+    }
+
+    async function uploadInvoice() {
+      alert("Upload functionality will connect to KRA bulk upload API.");
+    }
+
+    function updateAuditTrail(invoice) {
+      const trail = document.getElementById('auditTrail');
+      const li = document.createElement('li');
+      li.textContent = `Invoice #${invoice.id} transmitted on ${new Date().toLocaleDateString()}`;
+      trail.appendChild(li);
+    }
+
+    async function loadComplianceData() {
+      try {
+        let res = await fetch(`${API_BASE}/compliance`);
+        let data = await res.json();
+        document.getElementById('complianceRate').textContent = `${data.rate}%`;
+        document.getElementById('deadline').textContent = data.nextDeadline;
+      } catch (err) {
+        document.getElementById('complianceRate').textContent = "N/A";
+      }
+    }
+
+    // Simple chart demo
+    function drawChart() {
+      const ctx = document.getElementById('taxChart').getContext('2d');
+      ctx.fillStyle = "#27ae60";
+      ctx.fillRect(10, 150, 50, -100); // VAT collected
+      ctx.fillStyle = "#2980b9";
+      ctx.fillRect(80, 150, 50, -80);  // VAT declared
+    }
+
+    // Initialize
+    checkStatus();
+    loadComplianceData();
+    drawChart();
+  </script>
+  <!-- <script>
+    function generateInvoice() {
+      const log = document.getElementById('invoiceLog');
+      const newEntry = document.createElement('p');
+      newEntry.textContent = "New invoice generated and sent to KRA.";
+      log.appendChild(newEntry);
+
+      // Update pending count
+      let pending = document.getElementById('pendingCount');
+      pending.textContent = parseInt(pending.textContent) + 1;
+    }
+
+    function uploadInvoice() {
+      alert("Upload functionality coming soon!");
+    }
+
+    // Example chart using Canvas API
+    const ctx = document.getElementById('taxChart').getContext('2d');
+    ctx.fillStyle = "#27ae60";
+    ctx.fillRect(10, 150, 50, -100); // VAT collected
+    ctx.fillStyle = "#2980b9";
+    ctx.fillRect(80, 150, 50, -80);  // VAT declared
+  </script> -->
+</body>
+</html>

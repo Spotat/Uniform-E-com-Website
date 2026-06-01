@@ -1,0 +1,188 @@
+@media (max-width: 576px) {
+    header {
+        padding: 1rem;
+        /* position: relative; */
+    }
+    #navOpen {
+        display: block;
+    }
+    #navClose {
+        display: flex !important;
+    }
+    .logo {
+        font-size: 18px;
+        margin-right: auto;
+        z-index: 999;
+    }
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 0%;
+        /* width: 60%; */
+        padding: 5rem 1rem;
+        /* height: 100vh; */
+        min-height: 100%;
+        height: 100vh;
+        background-color: white;
+        z-index: 90;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1rem;
+        /* padding:  !important; */
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* display: none; */
+        transition: all .4s ease;
+    }
+    .navigation a {
+        width: 90%;
+        padding: 8px 20px;
+    }
+    .profile_container .profile_name {
+        font-size: 16px;
+    }
+    /*  */
+    main {
+        grid-template-columns: 1fr !important;
+        padding: 1rem;
+    }
+    .dashboard_container > h2 {
+        font-size: 1.25rem !important;
+        font-weight: 500;
+    }
+    .dash_analytics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        /* flex-wrap: wrap; */
+
+        /* flex-direction: column; */
+    }
+    .analytics_card {
+        width: 100%;
+        /* width: 50%;
+        flex: .5; */
+    }
+    .dash_analytics .analytics_card h3 {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /*  */
+    .product_container_header {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }    
+    .product_container_header h2 {
+        font-size: 1.25rem !important;
+        font-weight: 500;
+    }
+    .product_container_header button {
+        font-weight: 500 !important;
+        font-size: 14px !important;
+    }
+    .product_container_row {
+        flex-direction: column;
+    }
+    .product_category_tabs_container {
+        max-width: 90vw !important;
+        width: 100%;
+        /* display: none; */
+        /* overflow: hidden; */
+        overflow-x: scroll;
+        scrollbar-width: none;
+        /* scrollbar-width: thin; */
+    }
+    .product_category_tabs_container .product_category_tab {
+        width: fit-content;
+        font-size: 15px !important;
+    }
+    /* .product_category_tabs_container {
+        width: 100%;
+        display: none;
+        overflow: hidden;
+        overflow-x: scroll;
+        scrollbar-width: thin;
+    } */
+    .search_container input {
+        font-size: 14px;
+    }
+    .product_list {
+        grid-template-columns: repeat(2, 1fr);
+        width: fit-content;
+        gap: .5rem;
+    }
+    .product_actions {
+        flex-direction: column;
+        align-items: flex-start;
+        /* gap: .5rem; */
+    }
+    /* .product_actions_row {
+        width: 100%;
+        flex-direction: column;
+    } */
+    .product_actions_row > button {
+        width: 100%;
+        font-weight: 600;
+        padding: 5px;
+        font-size: 14px !important;
+    }
+
+    .product_card h3,
+    .inventory_card h3 {
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .product_card img {
+        height: 150px;
+        /* height: 250px; */
+    }
+    .product_card_body > p {
+        font-size: 12px;
+        /* font-size: 14px; */
+    }
+
+    .invoice_section h2 {
+        font-size: 1.25rem !important;
+        font-weight: 500;
+    }
+    .payment_container h2 {
+        font-size: 1rem !important;
+    }
+
+    .table_section {
+        padding: 0%;
+    }
+    .error_cont {
+        padding: 3rem 2rem;
+    }
+    .table_wrapper {
+        /* max-width: 85vw; */
+        width: 100%;            /* full width of screen */
+        overflow-x: auto;        /* horizontal scroll if needed */
+        -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    }
+
+    .invoice_table {
+        width: 100%;             /* table fills wrapper */
+        min-width: 600px;        /* force scroll if smaller screens */
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .invoice_table th,
+    .invoice_table td {
+        padding: 12px;
+        text-align: left;
+        font-size: 16px;
+        white-space: nowrap;     /* prevent wrapping, ensures scroll */
+        font-weight: 500;
+        color: #555;
+    }
+
+}

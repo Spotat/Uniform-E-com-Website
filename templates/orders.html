@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All orders</title>
+    <link rel="stylesheet" href="../static/styles/orders.css">
+    <link rel="stylesheet" href="../static/styles/dashboard.css">
+    <link rel="stylesheet" href="../static/styles/dashboard_mobile.css">
+    <link rel="stylesheet" href="../static/styles/fonts.css">
+    <link rel="stylesheet" href="../static/assets/icons/regular-icon-font-free/lineicons.css">
+</head>
+<body>
+    <header class="header">
+        <span id="navOpen" onclick="openNav()" class="lni lni-dashboard-square-1"></span>
+        <div class="logo">Uni<span>Center</span></div>
+        <nav class="navigation" id="sideNav">
+            <div id="navClose" onclick="closeNav()">
+                <span  class="lni lni-exit"></span>
+                <p>Close</p>
+            </div>
+            <a href="./dashboard.html"><span class="lni lni-dashboard-square-1"></span> Dashboard</a>
+            <a href="./orders.html" class="active"><span class="lni lni-basket-shopping-3"></span> Orders</a>
+            <a href="./inventory.html"><span class="lni lni-box-closed"></span> Inventory</a>
+            <a href="#"><span class="lni lni-bar-chart-4"></span> Analytics</a>
+            <a href="#"><span class="lni lni-gear-1"></span> Settings</a>
+        </nav>
+        <div class="profile_container">
+            <div class="profile_row">
+                <span class="lni lni-user-4"></span>
+                <div class="profile_info">
+                    <h3 class="profile_name">John Doe</h3>
+                    <p>Admin</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="order_section">
+                    <div class="product_category_tabs_container" style="margin-bottom: 2rem; background: #f4f4f4;">
+                        <div class="product_category_tab active">All orders <span>2</span></div>
+                        <div class="product_category_tab">Order On Hold <span>1</span></div>
+                        <div class="product_category_tab">Offline <span>0</span></div>
+                    </div>
+                <div class="product_container_header" style="margin-bottom: 2rem;">
+                    <h2>Order Management</h2>
+                    <div class="product_container_row">
+                        <div class="search_container">
+                            <input type="text" id="searchInput" placeholder="Search orders...">
+                            <span class="button lni lni-search-1"></span>
+                        </div>
+                        <button class="add_product_btn"><span class="lni lni-plus"></span> Create Order</button>
+                    </div>
+                </div>
+            <div class="table_wrapper">
+                <table class="invoice_table order_table" id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <!-- <th>Date</th> -->
+                            <th>Status</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic list -->
+                    </tbody>
+                    <tbody style="display: none;">
+                        <tr>
+                            <td>#12345</td>
+                            <td>Jane Smith</td>
+                            <!-- <td>2024-06-01</td> -->
+                            <td><span class="status pending">Pending</span></td>
+                            <td>KES 1099.99</td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>Bob Johnson</td>
+                            <!-- <td>2024-06-02</td> -->
+                            <td><span class="status completed">Completed</span></td>
+                            <td>KES 11,149</td>
+                        </tr>
+                        <!-- More orders -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="invoice_section">
+            <h2>Order Details</h2>
+            <div class="order_item_details">
+                <p class="customer_name">
+                    John Doe
+                </p>
+                <p class="date">28 Mar 2026, 12:30</p>
+            </div>
+            <!-- <h2>Order ID <span>#0000</span></h2> -->
+            <table class="invoice_table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <!-- <th>Date</th> -->
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#12345</td>
+                        <td>Jane Smith</td>
+                        <!-- <td>2024-06-01</td> -->
+                        <td><span class="status pending">Pending</span></td>
+                        <td>$99.99</td>
+                    </tr>
+                    <tr>
+                        <td>#12346</td>
+                        <td>Bob Johnson</td>
+                        <!-- <td>2024-06-02</td> -->
+                        <td><span class="status completed">Completed</span></td>
+                        <td>$149.99</td>
+                    </tr>
+                    <!-- More orders -->
+                </tbody>
+            </table>
+            <div class="table_section" id="orderDetails">
+                <div class="error_cont">
+                    <span class="lni lni-basket-shopping-3"></span>
+                    <!-- <span class="lni lni-folder-1"></span> -->
+                    <p>Select an order to view it's details or create a new order.<a href="#">Create an order</a></p>
+                </div>
+            </div>
+            <div class="payment_container">
+                <h2>Invoice Summary</h2>
+                <div class="summary_container">
+                    <div class="summary_list">
+                        <h3>Sub Total</h3>
+                        <p id="subTotal"><b>KES</b> 00</p>
+                    </div>
+                    <div class="summary_list">
+                        <h3>Tax</h3>
+                        <p id="tax"><b>KES</b> 00</p>
+                    </div>
+                    <div class="summary_list" id="bold">
+                        <h3>Total Payments</h3>
+                        <p id="total"><b>KES</b> 00</p>
+                    </div>
+                    <div class="summary_list">
+                        <h3>Cash</h3>
+                        <p id="tax"><b>KES</b> 00</p>
+                    </div>
+                    <div class="summary_list">
+                        <h3>Balance</h3>
+                        <p id="tax"><b>KES</b> 00</p>
+                    </div>
+                </div>
+                <div class="payment_method_container" style="display: none;">
+                    <div class="payment_method active">
+                        <span class="lni lni-credit-card-multiple"></span>
+                        <p>Credit card</p>
+                    </div>
+                    <div class="payment_method">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Mpesa</p>
+                    </div>
+                    <div class="payment_method">
+                        <span class="lni lni-cash-app"></span>
+                        <p>Cash payout</p>
+                    </div>
+                </div>
+                <button><span class="lni lni-printer"></span> Print Invoice</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../static/scripts/navigation.js"></script>
+    <script>
+
+        const orders = [
+            {
+                id: "#12346",
+                customer: "Bob Johnson",
+                status: "Completed",
+                total: "KES 11,149"
+            },
+            {
+                id: "#12347",
+                customer: "Alice Smith",
+                status: "Pending",
+                total: "KES 5,200"
+            },
+            {
+                id: "#12348",
+                customer: "Charlie Brown",
+                status: "Processing",
+                total: "KES 7,890"
+            },
+            {
+                id: "#12349",
+                customer: "Diana Prince",
+                status: "Completed",
+                total: "KES 15,300"
+            },
+            {
+                id: "#12350",
+                customer: "Ethan Hunt",
+                status: "Cancelled",
+                total: "KES 2,450"
+            },
+            {
+                id: "#12351",
+                customer: "Fiona Gallagher",
+                status: "Pending",
+                total: "KES 9,600"
+            },
+            {
+                id: "#12352",
+                customer: "George Clooney",
+                status: "Completed",
+                total: "KES 12,750"
+            }
+        ];
+
+
+        const searchInput = document.getElementById("searchInput");
+        const tableBody = document.querySelector("#ordersTable tbody");
+        const detailsPanel = document.getElementById("orderDetails");
+
+        // Function to render rows (so we can re-render after search)
+        function renderRows(filteredOrders) {
+        tableBody.innerHTML = ""; // clear existing rows
+        filteredOrders.forEach(order => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${order.customer}</td>
+                <td><span class="status ${order.status.toLowerCase()}">${order.status}</span></td>
+                <td>${order.total}</td>
+            `;
+
+            // Add click event for details
+            row.addEventListener("click", () => {
+            detailsPanel.innerHTML = `
+                <h3>Order ${order.id}</h3>
+                <p><strong>Customer:</strong> ${order.customer}</p>
+                <p><strong>Status:</strong> ${order.status}</p>
+                <p><strong>Total:</strong> ${order.total}</p>
+            `;
+            });
+
+            tableBody.appendChild(row);
+        });
+        }
+
+        // Initial render
+        renderRows(orders);
+
+        // Search by customer name
+        searchInput.addEventListener("keyup", () => {
+        const query = searchInput.value.toLowerCase();
+        const filtered = orders.filter(order =>
+            order.customer.toLowerCase().includes(query)
+        );
+        renderRows(filtered);
+        });
+
+
+
+        /*// Example orders array
+        const orders = [
+            {
+                id: "#12346",
+                customer: "Bob Johnson",
+                status: "Completed",
+                total: "KES 11,149"
+            },
+            {
+                id: "#12347",
+                customer: "Alice Smith",
+                status: "Pending",
+                total: "KES 5,200"
+            },
+            {
+                id: "#12348",
+                customer: "Charlie Brown",
+                status: "Processing",
+                total: "KES 7,890"
+            },
+            {
+                id: "#12349",
+                customer: "Diana Prince",
+                status: "Completed",
+                total: "KES 15,300"
+            },
+            {
+                id: "#12350",
+                customer: "Ethan Hunt",
+                status: "Cancelled",
+                total: "KES 2,450"
+            },
+            {
+                id: "#12351",
+                customer: "Fiona Gallagher",
+                status: "Pending",
+                total: "KES 9,600"
+            },
+            {
+                id: "#12352",
+                customer: "George Clooney",
+                status: "Completed",
+                total: "KES 12,750"
+            }
+            ];
+
+
+        const tableBody = document.querySelector("#ordersTable tbody");
+        const detailsPanel = document.getElementById("orderDetails");
+
+        // Render rows
+        orders.forEach(order => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${order.customer}</td>
+                <td><span class="status ${order.status.toLocaleLowerCase()}">${order.status}</span></td>
+                <td>${order.total}</td>
+            `;
+
+            // Add click event
+            row.addEventListener("click", () => {
+                detailsPanel.innerHTML = `
+                <h3>Order #${order.id}</h3>
+                <p><strong>Customer:</strong> ${order.customer}</p>
+                <p><strong>Total:</strong> ${order.total}</p>
+                <p><strong>Items:</strong> ${order.items.join(", ")}</p>
+                `;
+            });
+
+            tableBody.appendChild(row);
+        });
+
+
+        const searchInput = document.getElementById("searchInput");
+        const tableRows = document.querySelectorAll("#ordersTable tbody tr");
+
+        searchInput.addEventListener("keyup", () => {
+            const query = searchInput.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+                if (rowText.includes(query)) {
+                row.style.display = ""; // show row
+                } else {
+                row.style.display = "none"; // hide row
+                }
+            });
+        });
+        */
+    </script>
+</body>
+</html>

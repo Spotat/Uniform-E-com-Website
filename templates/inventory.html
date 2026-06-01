@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="../static/styles/inventory.css">
+    <link rel="stylesheet" href="../static/styles/dashboard.css">
+    <link rel="stylesheet" href="../static/styles/dashboard_mobile.css">
+    <link rel="stylesheet" href="../static/styles/fonts.css">
+    <link rel="stylesheet" href="../static/assets/icons/regular-icon-font-free/lineicons.css">
+</head>
+<body>
+    <header class="header">
+        <span id="navOpen" class="lni lni-dashboard-square-1"></span>
+        <div class="logo">Uni<span>Center</span></div>
+        <nav class="navigation">
+            <a href="#"><span class="lni lni-dashboard-square-1"></span> Dashboard</a>
+            <a href="#"><span class="lni lni-basket-shopping-3"></span> Orders</a>
+            <a href="#" class="active"><span class="lni lni-box-closed"></span> Inventory</a>
+            <a href="#"><span class="lni lni-bar-chart-4"></span> Analytics</a>
+            <a href="#"><span class="lni lni-gear-1"></span> Settings</a>
+        </nav>
+        <div class="profile_container">
+            <div class="profile_row">
+                <span class="lni lni-user-4"></span>
+                <div class="profile_info">
+                    <h3 class="profile_name">John Doe</h3>
+                    <p>Admin</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="inventory_header">
+        <div class="product_container_header">
+            <h2>Inventory Management</h2>
+            <div class="product_container_row">
+                <div class="search_container">
+                    <input type="text" placeholder="Search Inventory...">
+                    <span class="lni lni-search-1"></span>
+                </div>
+                <button class="add_product_btn"><span class="lni lni-plus"></span> Add Product</button>
+            </div>
+        </div>
+        <div class="product_category_tabs_container">
+            <div class="product_category_tab active">All Products <span>242</span></div>
+            <div class="product_category_tab" data-category="sweaters">Sweaters <span>50</span></div>
+            <div class="product_category_tab" data-category="jumpers">Jumpers <span>120</span></div>
+            <div class="product_category_tab" data-category="blazers">Blazers <span>20</span></div>
+            <div class="product_category_tab" data-category="shirts">Shirts <span>32</span></div>
+            <div class="product_category_tab" data-category="trousers">Trousers <span>20</span></div>
+        </div>
+    </div>
+    <section class="inventory_section">
+        <div class="inventory_card">
+            <div class="inventory_main_body">
+                <div class="inventory_card_image">
+                    <div class="stock_level_overlay">
+                        <p>Inv Level: <b>45</b></p>
+                        <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                    </div>
+                    <img src="../static/assets/images/1cc11e2696027de3d1f55948da02d1d9.jpg" alt="">
+                </div>
+                <div class="product_card_body">
+                    <h3>Formal blazer with school crest embroidery</h3>
+                    <div class="stock_level_indicator">
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Category:</p>
+                            </div>
+                            <p><b>Blazers</b></p>
+                        </div>
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Last Restock:</p>
+                            </div>
+                            <p>31 Apr 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics_container">
+                <h3>Product Analytics</h3>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Price</p>
+                    </div>
+                    <p><b>KES 1,500</b></p>
+                </div>
+                <!-- <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Net profit</p>
+                    </div>
+                    <p><b>KES 87, 000</b></p>
+                </div> -->
+            </div>
+            <div class="button_container">
+                <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="inventory_card">
+            <div class="inventory_main_body">
+                <div class="inventory_card_image">
+                    <div class="stock_level_overlay">
+                        <p>Inv Level: <b>15</b></p>
+                        <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                    </div>
+                    <img src="../static/assets/images/99532372fa39688782a8fedb335efce5.jpg" alt="">
+                </div>
+                <div class="product_card_body">
+                    <h3>Durable cotton jumper, perfect for daily wear.</h3>
+                    <div class="stock_level_indicator">
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Category:</p>
+                            </div>
+                            <p><b>Blazers</b></p>
+                        </div>
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Last Restock:</p>
+                            </div>
+                            <p>31 Apr 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics_container">
+                <h3>Product Analytics</h3>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Price</p>
+                    </div>
+                    <p><b>KES 2,300</b></p>
+                </div>
+                <!-- <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Net profit</p>
+                    </div>
+                    <p><b>KES 87, 000</b></p>
+                </div> -->
+            </div>
+            <div class="button_container">
+                <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="inventory_card">
+            <div class="inventory_main_body">
+                <div class="inventory_card_image">
+                    <div class="stock_level_overlay">
+                        <p>Inv Level: <b>52</b></p>
+                        <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                    </div>
+                    <img src="../static/assets/images/dd9fd1b20ad93619505f8dc95c690e97.jpg" alt="">
+                </div>
+                <div class="product_card_body">
+                    <h3>Polo Knit xl sweaters</h3>
+                    <div class="stock_level_indicator">
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Category:</p>
+                            </div>
+                            <p><b>Blazers</b></p>
+                        </div>
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Last Restock:</p>
+                            </div>
+                            <p>31 Apr 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics_container">
+                <h3>Product Analytics</h3>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Price</p>
+                    </div>
+                    <p><b>KES 1,000</b></p>
+                </div>
+                <!-- <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Net profit</p>
+                    </div>
+                    <p><b>KES 87, 000</b></p>
+                </div> -->
+            </div>
+            <div class="button_container">
+                <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="inventory_card">
+            <div class="inventory_main_body">
+                <div class="inventory_card_image">
+                    <div class="stock_level_overlay">
+                        <p>Inv Level: <b>10</b></p>
+                        <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                    </div>
+                    <img src="../static/assets/images/a7ad2bdcc1223bbff0b6ec239caea38c.jpg" alt="">
+                </div>
+                <div class="product_card_body">
+                    <h3>Warm wool blend sweater, available in all sizes.</h3>
+                    <div class="stock_level_indicator">
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Category:</p>
+                            </div>
+                            <p><b>Blazers</b></p>
+                        </div>
+                        <div class="stock_indicator_row">
+                            <div class="ss">
+                                <span class="lni lni-refresh-circle-1-clockwise"></span>
+                                <p>Last Restock:</p>
+                            </div>
+                            <p>31 Apr 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics_container">
+                <h3>Product Analytics</h3>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Price</p>
+                    </div>
+                    <p><b>KES 900</b></p>
+                </div>
+                <!-- <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Net profit</p>
+                    </div>
+                    <p><b>KES 12, 000</b></p>
+                </div> -->
+            </div>
+            <div class="button_container">
+                <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="inventory_card">
+            <div class="inventory_main_body">
+                <div class="inventory_card_image">
+                    <img src="../static/assets/images/18d320f1410c91bef536cb871156c5b3.jpg" alt="">
+                </div>
+                <div class="product_card_body">
+                    <h3>Navy-Blue High School UniSex Blazers</h3>
+                    <div class="stock_level_indicator">
+                        <div class="stock_indicator_row">
+                            <span class="lni lni-refresh-circle-1-clockwise"></span>
+                            <p><b>28 Mar 2026</b></p>
+                        </div>
+                        <div class="stock_indicator_row">
+                            <span class="lni lni-alarm-1"></span>
+                            <p>31 Apr 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics_container">
+                <h3>Product Analytics</h3>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Gross profit</p>
+                    </div>
+                    <p><b>KES 117, 000</b></p>
+                </div>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Net profit</p>
+                    </div>
+                    <p><b>KES 87, 000</b></p>
+                </div>
+            </div>
+            <div class="button_container">
+                <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="inventory_card">
+            <div class="inventory_main_body">
+                <div class="inventory_card_image">
+                    <img src="../static/assets/images/530d22bbe8f88621ea36df079b144014.jpg" alt="">
+                </div>
+                <div class="product_card_body">
+                    <h3>Classic Daily Blazer & Trousers</h3>
+                    <div class="stock_level_indicator">
+                        <div class="stock_indicator_row">
+                            <span class="lni lni-refresh-circle-1-clockwise"></span>
+                            <p><b>28 Mar 2026</b></p>
+                        </div>
+                        <div class="stock_indicator_row">
+                            <span class="lni lni-alarm-1"></span>
+                            <p>31 Apr 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics_container">
+                <h3>Product Analytics</h3>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Gross profit</p>
+                    </div>
+                    <p><b>KES 117, 000</b></p>
+                </div>
+                <div class="analytics_card">
+                    <div class="analytics_row">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Net profit</p>
+                    </div>
+                    <p><b>KES 87, 000</b></p>
+                </div>
+            </div>
+            <div class="button_container">
+                <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                </div>
+            </div>
+        </div> -->
+    </section>
+</body>
+</html>

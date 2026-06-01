@@ -1,0 +1,81 @@
+:root {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1rem;
+    --font-size-h5: .95rem;
+    --font-size-text: 1rem;
+    --font-size-button: .95rem;
+    --color-accent:  rgb(204, 120, 56);
+    /* --color-accent:  rgb(3, 42, 10); */
+    --color-primary: white;
+    --color-secondary: rgb(18, 33, 49);
+    /* --color-alt: rgb(223, 0, 0); */
+    --color-alt: rgb(91, 145, 4);
+    /* --color-alt: rgb(0, 95, 197); */
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-family: "Poppins-Regular", sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+h2 {
+    font-size: var(--font-size-h2);
+    font-family: "Futura", sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+h3 {
+    font-size: var(--font-size-h3);
+    font-family: "Futura", sans-serif;
+    font-weight: 600;
+}
+h4 {
+    font-size: var(--font-size-h4);
+    font-family: "Poppins-Light";
+    font-weight: 600;
+    color: var(--color-alt);
+    /* color: rgb(0, 149, 255); */
+}
+h5 {
+    font-size: var(--font-size-h5);
+    font-family: "Poppins-Medium";
+    font-weight: 600;
+}
+p {
+    font-size: var(--font-size-text);
+    font-family: "Poppins-Regular";
+    font-weight: 500;
+}
+
+button {
+    width: fit-content;
+    font-size: var(--font-size-button);
+    font-family: "Poppins-Medium";
+    font-weight: 500;
+    padding: 8px 40px;
+    border: 1px solid var(--color-alt);
+    background-color:  var(--color-alt);
+    color: white;
+    cursor: pointer;
+    transition: all .4s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 30px;
+    text-wrap: nowrap;
+    margin-top: 1rem;
+}
+button:hover {
+    color: var(--color-alt);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-alt);
+}
+
+@media (max-width: 576px) {
+    :root {
+        --font-size-h1: 1.75rem;
+    }
+}

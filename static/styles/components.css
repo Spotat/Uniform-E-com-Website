@@ -1,0 +1,48 @@
+/*  */
+.size_container {
+    width: 100%;
+    display: grid;
+    gap: .5rem;
+}
+.size-group {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color:  rgba(113, 113, 228, 0.192) !important;
+    -webkit-scrollbar-color: rgba(113, 113, 228, 0.192) !important;
+}
+.size {
+    width: fit-content;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #989898;
+    cursor: pointer;
+}
+.size:hover,
+.size.active {
+    background-color: #989898;
+    transition:  .1s ease-in;
+}
+.size p {
+    font-size: 12px;
+    font-weight: 500;
+    transition:  .1s ease-out;
+}
+.size:hover p,
+.size.active p {
+    color: white !important;
+}
+
+@media (max-width: 576px) {
+    .size-group {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color:  rgba(113, 113, 228, 0.192) !important;
+        -webkit-scrollbar-color: rgba(113, 113, 228, 0.192) !important;
+    }
+
+}

@@ -1,0 +1,181 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.inventory_header {
+    width: 100%;
+    padding: 2rem;
+}
+
+/*  */
+.inventory_section {
+    width: 100%;
+    padding: 0 2rem 2rem 2rem;
+}
+.inventory_section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+}
+
+/*  */
+.inventory_card {
+    width: 100%;
+    padding: 10px;
+    /* padding: 1rem; */
+    display: grid;
+    gap: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #333;
+}
+.inventory_main_body {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: 1fr 3fr; */
+    gap: 1rem;
+}
+.inventory_card_image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    /* width: 40px !important;
+    height: 40px !important;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0,0.1); */
+}
+.inventory_card_image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1, 1;
+    object-position: center;
+}
+.product_card_body {
+    width: 100%;
+    margin: 0% !important;
+    padding: 0% !important;
+}
+.product_card_body h3 {
+    margin-top: 0;
+}
+/*  */
+.stock_level_indicator {
+    width: fit-content;
+    display: grid;
+    gap: .5rem;
+}
+.stock_indicator_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.ss {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.stock_indicator_row > span {
+    padding: 2px;
+    border-radius: 2px;
+    background-color: #f4f4f4;
+    color: #888;
+}
+.stock_indicator_row > p {
+    font-size: 14px;
+    color: #888;
+}
+/*  */
+.analytics_container {
+    width: 100%;
+    display: grid;
+    gap: .5rem;
+    color: #555;
+}
+.analytics_card {   
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.analytics_card p {
+    font-size: 15px;
+    font-weight: 600;
+}
+.inventory_card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s;
+}
+.inventory_card:hover {
+  transform: translateY(-5px);
+}
+
+.inventory_card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.analytics_row {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 5px;
+}
+.analytics_container > .analytics_card > .analytics_row span {
+    font-size: 14px !important;
+}
+.analytics_container > .analytics_card {
+    border-radius: 5px;
+    padding: .5rem;
+}
+.analytics_container > .analytics_card:nth-child(odd) {
+    background-color: #fff;
+}
+.analytics_container > .analytics_card:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.button_container > .product_actions_row {
+    width: 100%;
+    display: flex;
+}
+.button_container > .product_actions_row button {
+    /* flex: 1; */
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+@media (max-width: 578px) {
+    .inventory_header {
+        padding: 1rem;
+    }
+    .inventory_section {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 1rem ;
+    }
+    .product_card_body > h3 {
+        width: 90%;
+        font-weight: 500 !important;
+        text-transform: capitalize;
+        /* color: var(--color-alt); */
+        font-size: 1.15rem !important;
+    }
+}

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucenter Dashboard</title>
+    <link rel="stylesheet" href="../static/styles/dashboard.css">
+    <link rel="stylesheet" href="../static/styles/dashboard_mobile.css">
+    <link rel="stylesheet" href="../static/styles/components.css">
+    <link rel="stylesheet" href="../static/styles/fonts.css">
+    <link rel="stylesheet" href="../static/assets/icons/regular-icon-font-free/lineicons.css">
+</head>
+<body>
+    <header class="header">
+        <span id="navOpen" class="lni lni-dashboard-square-1" onclick="openNav()"></span>
+        <div class="logo">Uni<span>Center</span></div>
+        <nav class="navigation" id="sideNav">
+            <div id="navClose" onclick="closeNav()">
+                <span  class="lni lni-exit"></span>
+                <p>Close</p>
+            </div>
+            <a href="#" class="active"><span class="lni lni-dashboard-square-1"></span> Dashboard</a>
+            <a href="./orders.html"><span class="lni lni-basket-shopping-3"></span> Orders</a>
+            <a href="./inventory.html"><span class="lni lni-box-closed"></span> Inventory</a>
+            <a href="./compliance.html"><span class="lni lni-bar-chart-4"></span> Analytics</a>
+            <a href="#"><span class="lni lni-gear-1"></span> Settings</a>
+        </nav>
+        <div class="profile_container">
+            <div class="profile_row">
+                <span class="lni lni-user-4"></span>
+                <div class="profile_info">
+                    <h3 class="profile_name">John Doe</h3>
+                    <p>Admin</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="dashboard_section">
+            <div class="dashboard_container">
+                <h2>Dashboard Analytics</h2>
+                <div class="dash_analytics">
+                    <div class="analytics_card">
+                        <span class="lni lni-dollar"></span>
+                        <div class="card_body">
+                            <h3>Total Sales</h3>
+                            <p>KES 12,345</p>
+                        </div>
+                    </div>
+                    <div class="analytics_card">
+                        <span class="lni lni-basket-shopping-3"></span>
+                        <div class="card_body">
+                            <h3>Orders</h3>
+                            <p>123</p>
+                        </div>
+                    </div>
+                    <div class="analytics_card">
+                        <span class="lni lni-box-closed"></span>
+                        <div class="card_body">
+                            <h3>Inventory</h3>
+                            <p>456 items</p>
+                        </div>
+                    </div>
+                    <div class="analytics_card">
+                        <span class="lni lni-user-multiple-4"></span>
+                        <div class="card_body">
+                            <h3>Customers</h3>
+                            <p>789</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash_analytics">
+                    <div class="analytics_card">
+                        <span class="lni lni-dollar"></span>
+                        <div class="card_body">
+                            <h3>Total Sales</h3>
+                            <p>$12,345</p>
+                        </div>
+                    </div>
+                    <div class="analytics_card">
+                        <span class="lni lni-basket-shopping-3"></span>
+                        <div class="card_body">
+                            <h3>Orders</h3>
+                            <p>123</p>
+                        </div>
+                    </div>
+                    <div class="analytics_card">
+                        <span class="lni lni-box-closed"></span>
+                        <div class="card_body">
+                            <h3>Inventory</h3>
+                            <p>456 items</p>
+                        </div>
+                    </div>
+                    <div class="analytics_card">
+                        <span class="lni lni-user-multiple-4"></span>
+                        <div class="card_body">
+                            <h3>Customers</h3>
+                            <p>789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product_container">
+                <div class="product_container_header">
+                    <h2>Product Management</h2>
+                    <div class="product_container_row">
+                        <div class="search_container">
+                            <input type="text" placeholder="Search products...">
+                            <span class="lni lni-search-1"></span>
+                        </div>
+                        <button class="add_product_btn"><span class="lni lni-plus"></span> Add Product</button>
+                    </div>
+                </div>
+                <div class="product_category_tabs_container">
+                    <div class="product_category_tab active">All Products <span>242</span></div>
+                    <div class="product_category_tab">Sweaters <span>50</span></div>
+                    <div class="product_category_tab">Jumpers <span>120</span></div>
+                    <div class="product_category_tab">T-shirts <span>20</span></div>
+                    <div class="product_category_tab">Tie's <span>32</span></div>
+                    <div class="product_category_tab">Socks <span>20</span></div>
+                </div>
+                <div class="product_list" id="productsContainer">
+                    
+                    <div class="product_card">
+                        <div class="stock_level_overlay">
+                            <p>Inv Level: <b>45</b></p>
+                            <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                        </div>
+                        <img src="../static/assets/images/b9c56dc55f4f48ed7457508bb4e2aea0.jpg" alt="Product Image">
+                        <div class="product_card_body">
+                            <h3>Modern School Uniform Set</h3>
+                            <p class="product_description">
+                                A high-quality school uniform made from durable materials. Perfect for students of all ages, providing comfort and style throughout the school day.
+                            </p>
+                            <div class="size_container">
+                                <p>Select size:</p>
+                                <div class="size-group">
+                                    <div class="size">
+                                        <p>S</p>
+                                    </div>
+                                    <div class="size active">
+                                        <p>M</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>L</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XL</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_actions">
+                                <p>KES 1,300.00</p>
+                                <div class="product_actions_row">
+                                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                                </div>
+                            </div>
+                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="stock_level_overlay">
+                            <p>Inv Level: <b>102</b></p>
+                            <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                        </div>
+                        <img src="../static/assets/images/99532372fa39688782a8fedb335efce5.jpg" alt="Product Image">
+                        <div class="product_card_body">
+                            <h3>Premium Knit Polo & Skirt</h3>
+                            <p class="product_description">
+                                A high-quality school uniform made from durable materials. Perfect for students of all ages, providing comfort and style throughout the school day.
+                            </p>
+                            <div class="size_container">
+                                <p>Select size:</p>
+                                <div class="size-group">
+                                    <div class="size">
+                                        <p>S</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>M</p>
+                                    </div>
+                                    <div class="size active">
+                                        <p>L</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XL</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_actions">
+                                <p>KES 3,139.99</p>
+                                <div class="product_actions_row">
+                                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                                </div>
+                            </div>
+                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="stock_level_overlay">
+                            <p>Inv Level: <b>20</b></p>
+                            <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                        </div>
+                        <img src="../static/assets/images/b660217e7fce04b54eb40057ec27b485.jpg" alt="Product Image">
+                        <div class="product_card_body">
+                            <h3>Elite Academic Formal Suit</h3>
+                            <p class="product_description">
+                                A high-quality school uniform made from durable materials. Perfect for students of all ages, providing comfort and style throughout the school day.
+                            </p>
+                            <div class="size_container">
+                                <p>Select size:</p>
+                                <div class="size-group">
+                                    <div class="size">
+                                        <p>S</p>
+                                    </div>
+                                    <div class="size active">
+                                        <p>M</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>L</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XL</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_actions">
+                                <p>KES 4,449.99</p>
+                                <div class="product_actions_row">
+                                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                                </div>
+                            </div>
+                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="stock_level_overlay">
+                            <p>Inv Level: <b>54</b></p>
+                            <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                        </div>
+                        <img src="../static/assets/images/1cc11e2696027de3d1f55948da02d1d9.jpg" alt="Product Image">
+                        <div class="product_card_body">
+                            <h3>Classic Daily Blazer & Trousers</h3>
+                            <p class="product_description">
+                                A high-quality school uniform made from durable materials. Perfect for students of all ages, providing comfort and style throughout the school day.
+                            </p>
+                            <div class="size_container">
+                                <p>Select size:</p>
+                                <div class="size-group">
+                                    <div class="size">
+                                        <p>S</p>
+                                    </div>
+                                    <div class="size active">
+                                        <p>M</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>L</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XL</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_actions">
+                                <p>KES 2,129.00</p>
+                                <div class="product_actions_row">
+                                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                                </div>
+                            </div>
+                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="stock_level_overlay">
+                            <p class="stockOut"><b>Out of Stock</b></p>
+                            <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                        </div>
+                        <img src="../static/assets/images/dd9fd1b20ad93619505f8dc95c690e97.jpg" alt="Product Image">
+                        <div class="product_card_body">
+                            <h3>Formal blazer with school crest embroidery</h3>
+                            <p class="product_description">
+                                A high-quality school uniform made from durable materials. Perfect for students of all ages, providing comfort and style throughout the school day.
+                            </p>
+                            <div class="size_container">
+                                <p>Select size:</p>
+                                <div class="size-group">
+                                    <div class="size">
+                                        <p>S</p>
+                                    </div>
+                                    <div class="size active">
+                                        <p>M</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>L</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XL</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_actions">
+                                <p>KES 954.99</p>
+                                <div class="product_actions_row">
+                                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                                </div>
+                            </div>
+                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product_card">
+                        <div class="stock_level_overlay">
+                            <p class="stockOut"><b>Out of Stock</b></p>
+                            <!-- <p>Stk Level: <b>54 remaining</b></p> -->
+                        </div>
+                        <img src="../static/assets/images/ebf6e4328b1cdb82643ddc52d6773e8c.jpg" alt="Product Image">
+                        <div class="product_card_body">
+                            <h3>Durable cotton jumper</h3>
+                            <p class="product_description">
+                                A high-quality school uniform made from durable materials. Perfect for students of all ages, providing comfort and style throughout the school day.
+                            </p>
+                            <div class="size_container">
+                                <p>Select size:</p>
+                                <div class="size-group">
+                                    <div class="size">
+                                        <p>S</p>
+                                    </div>
+                                    <div class="size active">
+                                        <p>M</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>L</p>
+                                    </div>
+                                    <div class="size">
+                                        <p>XL</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_actions">
+                                <p>KES 4,444.99</p>
+                                <div class="product_actions_row">
+                                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                                </div>
+                            </div>
+                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="invoice_section" id="cartPanel">
+            <h2>Invoice<span>0</span></h2>
+            <div class="table_section" id="cartList">
+                <div class="error_cont">
+                    <span class="lni lni-basket-shopping-3"></span>
+                    <!-- <span class="lni lni-folder-1"></span> -->
+                    <p>You have no items in cart. <a href="#">Start shopping</a></p>
+                </div>
+            </div>
+            <div class="payment_container">
+                <h2>Invoice Summary</h2>
+                <div class="summary_container">
+                    <div class="summary_list">
+                        <h3>Sub Total</h3>
+                        <p id="subTotal"><b>KES</b> 00</p>
+                    </div>
+                    <div class="summary_list">
+                        <h3>Tax</h3>
+                        <p id="tax"><b>KES</b> 00</p>
+                    </div>
+                    <div class="summary_list" id="bold">
+                        <h3>Total Payments</h3>
+                        <p id="total"><b>KES</b> 00</p>
+                    </div>
+                </div>
+                <div class="payment_method_container">
+                    <div class="payment_method active">
+                        <span class="lni lni-credit-card-multiple"></span>
+                        <p>Credit card</p>
+                    </div>
+                    <div class="payment_method">
+                        <span class="lni lni-label-dollar-2"></span>
+                        <p>Mpesa</p>
+                    </div>
+                    <div class="payment_method">
+                        <span class="lni lni-cash-app"></span>
+                        <p>Cash payout</p>
+                    </div>
+                </div>
+                <button><span class="lni lni-check-circle-1"></span> Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- <script>
+        let cart = [];
+        const cartList = document.getElementById("cartList");
+        const subTotalEl = document.getElementById("subTotal");
+        const taxEl = document.getElementById("tax");
+        const totalEl = document.getElementById("total");
+
+
+
+        // Attach event listeners to all product cards
+        document.querySelectorAll(".product_card").forEach(card => {
+            const productName = card.querySelector("h3").textContent;
+            const productPrice = card.querySelector(".product_actions p").textContent;
+
+            card.querySelector(".add_to_cart_btn").addEventListener("click", () => {
+                // Add product to cart
+                cart.push({ name: productName, price: productPrice });
+                renderCart();
+            });
+        });
+
+        // Render cart items
+        function renderCart() {
+            cartList.innerHTML = "";
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ${item.price}`;
+
+                // Add remove button
+                const removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+                removeBtn.style.marginLeft = "10px";
+                removeBtn.addEventListener("click", () => {
+                cart.splice(index, 1); // remove item
+                renderCart();
+                });
+
+                li.appendChild(removeBtn);
+                cartList.appendChild(li);
+            });
+        }
+
+        // Attach event listeners to product cards
+        document.querySelectorAll(".product_card").forEach(card => {
+            const productName = card.querySelector("h3").textContent;
+            const productPrice = parseFloat(card.querySelector(".price").textContent);
+
+            card.querySelector(".add_to_cart_btn").addEventListener("click", () => {
+                cart.push({ name: productName, price: productPrice });
+                updateInvoiceSummary();
+            });
+        });
+
+        // Update invoice summary
+        function updateInvoiceSummary() {
+            const subTotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const tax = subTotal * 0.16; // Example: 16% VAT
+            const total = subTotal + tax;
+
+            subTotalEl.innerHTML = `<b>KES</b> ${subTotal.toFixed(2)}`;
+            taxEl.innerHTML = `<b>KES</b> ${tax.toFixed(2)}`;
+            totalEl.innerHTML = `<b>KES</b> ${total.toFixed(2)}`;
+        }
+
+    </script> -->
+
+    <script>
+        let cart = [];
+        const cartList = document.getElementById("cartList");
+        const subTotalEl = document.getElementById("subTotal");
+        const taxEl = document.getElementById("tax");
+        const totalEl = document.getElementById("total");
+        // Checkout button
+        const checkoutBtn = document.querySelector(".payment_container button");
+
+
+        // Attach event listeners to all product cards
+        document.querySelectorAll(".product_card").forEach(card => {
+            const productName = card.querySelector("h3").textContent;
+            const rawPrice = card.querySelector(".product_actions p").textContent;
+            const productImage = card.querySelector("img").getAttribute("src"); 
+            // Remove "KES" and commas, then parse
+            const productPrice = parseFloat(
+                rawPrice.replace("KES", "").replace(/,/g, "").trim()
+            );
+
+            card.querySelector(".add_to_cart_btn").addEventListener("click", () => {
+                
+                // Check if product already exists in cart
+                //const existingItem = cart.find(item => item.name === productName);
+                //if (existingItem) {
+                // Get selected size (the one with .active class)
+                const activeSizeEl = card.querySelector(".size-group .size.active p");
+                const selectedSize = activeSizeEl ? activeSizeEl.textContent : "Default";
+
+                // Check if product with same size already exists in cart
+                const existingItem = cart.find(item => item.name === productName && item.size === selectedSize);
+                if (existingItem) {
+                    existingItem.quantity += 1; // increment quantity
+                } else {
+                    cart.push({ name: productName, price: productPrice, size: selectedSize, image: productImage, quantity: 1 });
+                }
+                renderCart();
+                updateInvoiceSummary();
+            });
+        });
+
+        // Render cart items
+        function renderCart() {
+            cartList.innerHTML = "";
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.classList.add("cart_item")
+                // Grid container
+                li.innerHTML = `
+                    <div class="cart_grid">
+                        <div class="cart_image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart_info">
+                            <div class="cart_info_body">
+                                <h4>${item.name}</h4>
+                                <div class="cart_info_specs">
+                                    <p>Size: ${item.size}</p>
+                                    <p>x${item.quantity}</p>
+                                </div>
+                            </div>
+                            <!-- <div class="size">
+                                <p>${item.size}</p>
+                            </div> -->
+                        </div>
+                        <div class="cart_item_price">
+                            <p>KES ${item.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                `;
+                //li.textContent = `${item.name} - KES ${item.price.toFixed(2)} x ${item.quantity}`;
+
+                // Add remove button
+                const removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+                removeBtn.classList.add("remove_btn")
+                //removeBtn.style.marginLeft = "10px";
+                removeBtn.addEventListener("click", () => {
+                    if (item.quantity > 1) {
+                        item.quantity -= 1; // decrease quantity
+                    } else {
+                        cart.splice(index, 1); // remove item completely
+                    }
+                    renderCart();
+                    updateInvoiceSummary();
+                });
+
+                li.appendChild(removeBtn);
+                cartList.appendChild(li);
+            });
+        }
+
+        // Update invoice summary
+        function updateInvoiceSummary() {
+            const subTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subTotal * 0.16; // Example: 16% VAT
+            const total = subTotal + tax;
+
+            subTotalEl.innerHTML = `<b>KES</b> ${subTotal.toFixed(2)}`;
+            taxEl.innerHTML = `<b>KES</b> ${tax.toFixed(2)}`;
+            totalEl.innerHTML = `<b>KES</b> ${total.toFixed(2)}`;
+        }
+
+
+        //Checkout functionality
+        checkoutBtn.addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+
+            // Build invoice payload
+            const invoicePayload = {
+                items: cart.map(item => ({
+                    name: item.name,
+                    size: item.size,
+                    price: item.price,
+                    quantity: item.quantity,
+                    lineTotal: (item.price * item.quantity).toFixed(2)
+                })),
+                subTotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2),
+                tax: (cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) * 0.16).toFixed(2),
+                total: (cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) * 1.16).toFixed(2),
+                paymentMethod: document.querySelector(".payment_method.active p").textContent,
+                timestamp: new Date().toISOString()
+            };
+
+            // Simulate sending to eTIMS
+            console.log("Sending invoice to eTIMS:", invoicePayload);
+
+            // For demo purposes
+            alert(`Invoice sent to eTIMS!\nTotal: KES ${invoicePayload.total}`);
+
+            cart = [];
+            renderCart();
+            updateInvoiceSummary();
+        });
+
+        // Attach delete confirmation to all delete buttons
+        document.querySelectorAll(".delete_btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const confirmDelete = confirm("Are you sure you want to remove this item from your inventory?");
+                if (confirmDelete) {
+                    // Proceed with deletion logic here
+                    console.log("Item deleted");
+                    alert("Product deleted successfully");
+                } else {
+                    console.log("Deletion cancelled");
+                    alert("Deletion cancelled");
+                }
+            });
+        });
+
+        /*checkoutBtn.addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+
+            // Build invoice payload
+            const invoicePayload = {
+                items: cart.map(item => ({
+                    name: item.name,
+                    size: item.size,
+                    price: item.price,
+                    quantity: item.quantity,
+                    lineTotal: (item.price * item.quantity).toFixed(2),
+                    image: item.image
+                })),
+                subTotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2),
+                tax: (cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) * 0.16).toFixed(2),
+                total: (cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) * 1.16).toFixed(2),
+                paymentMethod: document.querySelector(".payment_method.active p").textContent,
+                timestamp: new Date().toISOString()
+            };
+
+            // Simulate sending to eTIMS backend
+            fetch("/api/etims/checkout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(invoicePayload)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to send invoice");
+                return response.json();
+            })
+            .then(data => {
+                console.log("Invoice response:", data);
+                alert(`Invoice sent to eTIMS!\nTotal: KES ${invoicePayload.total}`);
+
+                // ✅ Clear cart after successful checkout
+                cart = [];
+                renderCart();
+                updateInvoiceSummary();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Checkout failed. Please try again.");
+            });
+        });
+        */
+
+    </script>
+
+    <script src="../static/scripts/navigation.js"></script>
+</body>
+</html>
