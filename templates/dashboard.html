@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/styles/dashboard.css">
     <link rel="stylesheet" href="../static/styles/dashboard_mobile.css">
     <link rel="stylesheet" href="../static/styles/components.css">
+    <link rel="stylesheet" href="../static/styles/animations.css">
     <link rel="stylesheet" href="../static/styles/fonts.css">
     <link rel="stylesheet" href="../static/assets/icons/regular-icon-font-free/lineicons.css">
 </head>
@@ -40,28 +41,28 @@
             <div class="dashboard_container">
                 <h2>Dashboard Analytics</h2>
                 <div class="dash_analytics">
-                    <div class="analytics_card">
+                    <div class="analytics_card animate-on-scroll">
                         <span class="lni lni-dollar"></span>
                         <div class="card_body">
                             <h3>Total Sales</h3>
                             <p>KES 12,345</p>
                         </div>
                     </div>
-                    <div class="analytics_card">
+                    <div class="analytics_card animate-on-scroll">
                         <span class="lni lni-basket-shopping-3"></span>
                         <div class="card_body">
                             <h3>Orders</h3>
                             <p>123</p>
                         </div>
                     </div>
-                    <div class="analytics_card">
+                    <div class="analytics_card animate-on-scroll">
                         <span class="lni lni-box-closed"></span>
                         <div class="card_body">
                             <h3>Inventory</h3>
                             <p>456 items</p>
                         </div>
                     </div>
-                    <div class="analytics_card">
+                    <div class="analytics_card animate-on-scroll">
                         <span class="lni lni-user-multiple-4"></span>
                         <div class="card_body">
                             <h3>Customers</h3>
@@ -69,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="dash_analytics">
+                <!-- <div class="dash_analytics">
                     <div class="analytics_card">
                         <span class="lni lni-dollar"></span>
                         <div class="card_body">
@@ -98,7 +99,7 @@
                             <p>789</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="product_container">
                 <div class="product_container_header">
@@ -121,7 +122,7 @@
                 </div>
                 <div class="product_list" id="productsContainer">
                     
-                    <div class="product_card">
+                    <div class="product_card animate-on-scroll">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>45</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -156,10 +157,10 @@
                                     <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
                                 </div>
                             </div>
-                            <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                            <button class="add_to_cart_btn untilt-on-scroll"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card">
+                    <div class="product_card animate-on-scroll">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>102</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -200,7 +201,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card">
+                    <div class="product_card animate-on-scroll">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>20</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -238,7 +239,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card">
+                    <div class="product_card animate-on-scroll">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>54</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -276,7 +277,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card">
+                    <div class="product_card animate-on-scroll">
                         <div class="stock_level_overlay">
                             <p class="stockOut"><b>Out of Stock</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -317,7 +318,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card">
+                    <div class="product_card animate-on-scroll">
                         <div class="stock_level_overlay">
                             <p class="stockOut"><b>Out of Stock</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -369,7 +370,7 @@
             </div>
             <div class="payment_container">
                 <h2>Invoice Summary</h2>
-                <div class="summary_container">
+                <div class="summary_container animate-on-scroll">
                     <div class="summary_list">
                         <h3>Sub Total</h3>
                         <p id="subTotal"><b>KES</b> 00</p>
@@ -383,7 +384,7 @@
                         <p id="total"><b>KES</b> 00</p>
                     </div>
                 </div>
-                <div class="payment_method_container">
+                <div class="payment_method_container animate-on-scroll">
                     <div class="payment_method active">
                         <span class="lni lni-credit-card-multiple"></span>
                         <p>Credit card</p>
@@ -401,6 +402,33 @@
             </div>
         </section>
     </main>
+
+    <div class="modal" id="modal">
+        <div class="modal_container">
+            <div class="modal_header">
+                <!-- <h2>Customer Info</h2> -->
+                <h2>Order Completion</h2>
+                <span onclick="closeModal()" class="lni lni-xmark"></span>
+            </div>
+            <form action="#">
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" placeholder="Customer name">
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Customer Email</label>
+                        <input type="email" placeholder="Customer email">
+                    </div>
+                    <div class="form-group">
+                        <label>Customer Phone Number</label>
+                        <input type="text" placeholder="+254-123-45678">
+                    </div>
+                </div>
+                <button type="submit">Complete Checkout</button>
+            </form>
+        </div>
+    </div>
 
     <!-- <script>
         let cart = [];
@@ -674,5 +702,6 @@
     </script>
 
     <script src="../static/scripts/navigation.js"></script>
+    <script src="../static/scripts/scroll_animation.js"></script>
 </body>
 </html>

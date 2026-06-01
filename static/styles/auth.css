@@ -75,6 +75,7 @@ body {
 .auth_body p {
     color: white !important;
     font-size: 14px;
+    font-weight: 300;
 }
 .auth_footer {
     width: 100%;
@@ -88,6 +89,7 @@ body {
 .auth_footer p {
     font-size: 14px;
     color: white;
+    font-weight: 300;
 }
 .signup_row:nth-child(2) {
     padding: 5rem;
@@ -99,13 +101,19 @@ body {
     width: 60% !important;
     height: 100%;
 }
+
+h1 {
+    font-weight: 300 !important;
+}
+
 h2 {
     font-size: 1.5rem !important;
-    font-weight: 800;
+    font-weight: 300 !important;
 }
 p {
     color: #888;
-    font-size: 14px;
+    font-size: 14px !important;
+    font-weight: 300 !important;
     margin-top: 10px;
 }
 
@@ -149,14 +157,16 @@ form {
     /* outline-color: rgba(1, 1, 85, 0.295); */
 }
 label {
-    color: #555;
-    font-weight: 600;
+    font-size: 16px;
+    color: #888;
+    font-weight: 400;
     text-transform: capitalize;
 }
 input {
     padding: 10px 20px;
-    font-size: 15px;
-    color: #555;
+    font-size: 14px;
+    font-weight: 300;
+    color: #333;
     border-radius: 5px;
     border: 1px solid #f4f4f4;
     font-family: 'Futura', sans-serif;
@@ -167,7 +177,8 @@ form > a {
     color: #fff;
     width: fit-content;
     padding: 8px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 300;
     border-radius: 5px !important;
     border: 1px solid var(--color-alt);
     background-color: var(--color-alt);
@@ -180,8 +191,9 @@ form > a:hover {
     border: 1px solid var(--color-alt);
 }
 .redirectory p {
-    font-size: 14px;
+    font-size: 12px !important;
     color: #333;
+    font-weight: 300 !important;
 }
 
 @media (max-width: 576px) {

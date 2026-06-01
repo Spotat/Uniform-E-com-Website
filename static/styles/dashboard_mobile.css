@@ -51,7 +51,7 @@
     }
     .dashboard_container > h2 {
         font-size: 1.25rem !important;
-        font-weight: 500;
+        /* font-weight: 500; */
     }
     .dash_analytics {
         display: grid;
@@ -67,8 +67,11 @@
         flex: .5; */
     }
     .dash_analytics .analytics_card h3 {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 16px;
+        /* font-weight: 500; */
+    }
+    .analytics_card .card_body p {
+        font-size: 14px !important;
     }
 
     /*  */
@@ -80,10 +83,10 @@
     }    
     .product_container_header h2 {
         font-size: 1.25rem !important;
-        font-weight: 500;
+        /* font-weight: 500; */
     }
     .product_container_header button {
-        font-weight: 500 !important;
+        /* font-weight: 500 !important; */
         font-size: 14px !important;
     }
     .product_container_row {
@@ -110,7 +113,7 @@
         scrollbar-width: thin;
     } */
     .search_container input {
-        font-size: 14px;
+        /* font-size: 14px; */
     }
     .product_list {
         grid-template-columns: repeat(2, 1fr);
@@ -128,15 +131,16 @@
     } */
     .product_actions_row > button {
         width: 100%;
-        font-weight: 600;
+        /* font-weight: 600; */
         padding: 5px;
         font-size: 14px !important;
     }
 
     .product_card h3,
     .inventory_card h3 {
-        font-size: 15px;
-        font-weight: 500;
+        font-size: 15px !important;
+        font-weight: 300 !important;
+        /* font-weight: 500; */
     }
     .product_card img {
         height: 150px;
@@ -149,7 +153,7 @@
 
     .invoice_section h2 {
         font-size: 1.25rem !important;
-        font-weight: 500;
+        /* font-weight: 500; */
     }
     .payment_container h2 {
         font-size: 1rem !important;
@@ -179,9 +183,9 @@
     .invoice_table td {
         padding: 12px;
         text-align: left;
-        font-size: 16px;
+        /* font-size: 16px; */
         white-space: nowrap;     /* prevent wrapping, ensures scroll */
-        font-weight: 500;
+        /* font-weight: 500; */
         color: #555;
     }
 

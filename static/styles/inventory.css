@@ -66,8 +66,16 @@
     margin: 0% !important;
     padding: 0% !important;
 }
-.product_card_body h3 {
+.product_card_body h3,
+.analytics_container h3 {
     margin-top: 0;
+    font-size: 17px !important;
+    /* font-size: 18px; */
+    font-weight: 500;
+    color: #555;
+}
+.analytics_container h3 {
+    color: #888;
 }
 /*  */
 .stock_level_indicator {
@@ -86,6 +94,10 @@
     align-items: center;
     gap: 5px;
 }
+.ss p {
+    font-size: 12px;
+    font-weight: 100;
+}
 .stock_indicator_row > span {
     padding: 2px;
     border-radius: 2px;
@@ -95,6 +107,7 @@
 .stock_indicator_row > p {
     font-size: 14px;
     color: #888;
+    font-weight: 400;
 }
 /*  */
 .analytics_container {
@@ -111,8 +124,8 @@
     gap: 1rem;
 }
 .analytics_card p {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 300;
 }
 .inventory_card {
   border: 1px solid #ddd;
@@ -156,10 +169,10 @@
 }
 .button_container > .product_actions_row button {
     /* flex: 1; */
-    padding: 8px;
+    padding: 5px 8px;
     border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 400 !important;
 }
 
 @media (max-width: 578px) {
@@ -173,9 +186,9 @@
     }
     .product_card_body > h3 {
         width: 90%;
-        font-weight: 500 !important;
+        font-weight: 400 !important;
         text-transform: capitalize;
         /* color: var(--color-alt); */
-        font-size: 1.15rem !important;
+        font-size: 1rem !important;
     }
 }

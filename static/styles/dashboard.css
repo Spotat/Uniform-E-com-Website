@@ -9,10 +9,10 @@
     --color-accent:  rgb(204, 120, 56);
     /* --color-accent:  rgb(3, 42, 10); */
     --color-primary: white;
-    --color-alt: rgb(91, 145, 4);
+    /* --color-alt: rgb(91, 145, 4); */
     /* --color-alt: #2c3e50; */
     /* --color-alt: rgb(0, 95, 197); */
-    /* --color-alt: rgb(223, 0, 0); */
+    --color-alt: rgb(223, 0, 0);
 }
 * {
     margin: 0%;
@@ -118,7 +118,8 @@ header {
     margin: 0 15px;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
     display: flex;
     align-items: center;
     border-radius: 5px;
@@ -158,12 +159,13 @@ header {
     margin-right: 10px;
 } */
 .profile_container .profile_name {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     color: var(--color-alt);
 }
 .profile_row p {
-    font-size: 14px;
+    font-size: 13px;
+    font-size: 100;
     color: #888;
 }
 
@@ -189,8 +191,8 @@ main {
     /* font-size: 20px; */
     /* font-size: 18px; */
     /* color: #111; */
-    font-size: 1.55rem !important;
-    font-weight: 500;
+    font-size: 1.5rem !important;
+    font-weight: 400;
     /* font-family: "Poppins-Medium", sans-serif; */
 }
 .dash_analytics {
@@ -200,10 +202,10 @@ main {
     /* margin-top: 1rem; */
     gap: 1rem;
 }
-.dash_analytics:nth-child(2) {
+/* .dash_analytics:nth-child(2) {
     margin-top: 1rem;
     display: none;
-}
+} */
 .dash_analytics .analytics_card {
     width: 100%;
     background-color: #fff;
@@ -245,14 +247,14 @@ main {
 }
 .dash_analytics .analytics_card h3 {
     color: var(--color-alt);
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 300;
     margin-bottom: 5px;
 }
 .dash_analytics .analytics_card p {
     color: #888;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px !important;
     text-transform: capitalize;
 }
 /*  */
@@ -273,8 +275,8 @@ main {
     gap: 1rem;
 }
 .product_container_header h2 {
-    font-size: 1.55rem !important;
-    font-weight: 500;
+    font-size: 1.5rem !important;
+    font-weight: 400;
     /* font-size: 1.5rem !important;
     font-weight: 600; */
     /* color: #333; */
@@ -288,7 +290,7 @@ main {
     border: 1px solid var(--color-alt);
     border-radius: 5px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 300;
     transition: all .4s ease;
 }
 .product_container_header button:hover {
@@ -306,8 +308,10 @@ main {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 15px;
+    /* font-size: 16px; */
     width: 300px;
+    font-weight: 300;
 }
 .search_container span {
     position: absolute;
@@ -318,15 +322,15 @@ main {
     /* background-color: var(--color-alt); */
     /* color: white; */
     /* border: 1px solid var(--color-alt); */
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 14px;
     color: #333;
     transition: all .4s ease;
 }
 .search_container span:hover {
     background-color: var(--color-alt);
     color: var(--color-primary);
-    border: 1px solid var(--color-alt);
+    /* border: 1px solid var(--color-alt); */
 }
 /*  */
 .product_category_tabs_container {
@@ -343,10 +347,10 @@ main {
 }
 .product_category_tabs_container .product_category_tab {
     padding: 5px 8px;
-    color: #333;
+    color: #555;
     border-radius: 5px;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     transition: all .1s ease-out;
     cursor: pointer;
     display: flex;
@@ -421,7 +425,9 @@ main {
     top: 1rem;
     left: 1rem;
     padding: 2px 4px;
-    background-color: #f4f4f4;
+    background-color: #3333339f;
+    /* background-color: rgb(251, 255, 2); */
+    /* background-color: #f4f4f4; */
     border-radius: 5px;
     z-index: 99;
     transition: .4s ease-in-out;
@@ -429,6 +435,8 @@ main {
 }
 .stock_level_overlay p {
     font-size: 14px;
+    font-weight: 300;
+    color: #fff !important;
 }
 .stock_level_overlay p.stockOut {
     color: rgb(175, 2, 2);
@@ -471,10 +479,10 @@ main {
 }
 .product_card h3 {
     /* width: 90%; */
-    font-size: 18px;
+    font-size: 17px !important;
     /* font-size: 18px; */
-    font-weight: 600;
-    color: #333;
+    font-weight: 500;
+    color: #555;
 }
 .product_card_body > p {
     display: -webkit-box;
@@ -485,7 +493,8 @@ main {
     -webkit-box-orient: vertical;
 }
 .product_card p {
-    color: #888;
+    color: #333;
+    font-weight: 300;
     font-size: 14px;
 }
 /*  */
@@ -493,15 +502,15 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 1rem; */
     margin-top: .5rem;
     /* justify-content: space-between; */
-    align-items: center;
+    /* align-items: center; */
     /* padding: 10px; */
 }
 .product_actions > p {
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 14px;
     color: var(--color-alt);
 }
 .product_actions_row {
@@ -518,6 +527,7 @@ main {
     transition: all .4s ease;
 }
 .product_card_body > button {
+    width: 100%;
     margin-top: 1rem;
     font-weight: 600;
     font-size: 14px;
@@ -581,17 +591,18 @@ main {
 .order_item_details p {
     color: #888;
     font-size: 15px;
+    font-weight: 300;
 }
 .date {
-    font-weight: 700;
+    font-weight: 500;
 }
 .customer_name {
-    font-weight: 500;
+    font-weight: 300;
 }
 .invoice_section h2 {
-    font-size: 1.55rem !important;
+    font-size: 1.5rem !important;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 300;
     /* color: #333; */
     display: flex;
     align-items: center;
@@ -623,10 +634,10 @@ thead {
 .invoice_table th, .invoice_table td {
     padding: 12px;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     /* border-bottom: 1px solid #eee; */
     text-wrap: nowrap;
-    font-weight: 500;
+    font-weight: 400;
     color: #555;
 }
 .invoice_table tbody tr:nth-child(even) {
@@ -647,7 +658,8 @@ thead {
     border-radius: 5px;
     /* border-radius: 20px; */
     color: white;
-    font-size: 14px;
+    font-weight: 100;
+    font-size: 12px;
 }
 .invoice_table .status.completed {
     background-color: rgb(105, 180, 6);
@@ -720,7 +732,7 @@ thead th:last-child {
     text-align: center;
     font-size: 14px;
     color: #888;
-    font-weight: 500;
+    font-weight: 300;
     margin-top: 10px;
     margin-top: 1rem;
     line-height: 2 !important;
@@ -732,6 +744,7 @@ thead th:last-child {
     text-decoration: none;
     border-radius: 5px;
     text-wrap: nowrap;
+    font-weight: 300;
 }
 /* table listing */
 
@@ -789,7 +802,7 @@ thead th:last-child {
 .cart_info h4 {
   margin: 0;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 .cart_info_specs {
     display: flex;
@@ -800,6 +813,7 @@ thead th:last-child {
 .cart_item_price > p {
   margin: 0;
   font-size: 14px;
+  font-weight: 300;
   color: #555;
   text-align: start !important;
   text-wrap: nowrap;
@@ -819,6 +833,7 @@ thead th:last-child {
   position: absolute;
   bottom: 0;
   right: 0%;
+  font-weight: 300;
   /* display: none; */
 }
 .remove_btn:hover {
@@ -840,6 +855,7 @@ thead th:last-child {
 }
 .payment_container h2 {
     font-size: 1.25rem !important;
+    font-weight: 300;
     /* color: var(--color-alt); */
 }
 .summary_container {
@@ -856,11 +872,11 @@ thead th:last-child {
 }
 .summary_list > h3 {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 300;
     color: #888;
 }
 .summary_list#bold > h3 {
-    font-weight: 800;
+    font-weight: 500;
     color: #333;
     /* color: var(--color-alt); */
 }
@@ -871,9 +887,9 @@ thead th:last-child {
     /* color: var(--color-alt); */
 }
 .summary_list > p {
-    font-weight: 700;
+    font-weight: 400;
     color: #888;
-    font-size: 18px;
+    font-size: 16px;
 }
 .summary_list > p b {
     color: #888;
@@ -902,11 +918,11 @@ thead th:last-child {
     cursor: pointer;
 }
 .payment_method span {
-    font-size: 20px;
+    font-size: 18px;
 }
 .payment_method p {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 200;
     text-align: center;
     /* color: #333; */
     color: #555;
@@ -924,6 +940,7 @@ thead th:last-child {
 
 /*  */
 .payment_container > button {
+    width: 100%;
     padding: 8px 20px;
     background-color: rgb(105, 180, 6);
     color: white;
@@ -936,6 +953,7 @@ thead th:last-child {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    font-weight: 400;
     transition: all .3s ease;
 }
 .payment_container > button:hover {
