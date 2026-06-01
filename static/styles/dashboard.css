@@ -292,6 +292,7 @@ main {
     font-size: 15px;
     font-weight: 300;
     transition: all .4s ease;
+    margin: 0% !important;
 }
 .product_container_header button:hover {
     background-color: var(--color-primary);
