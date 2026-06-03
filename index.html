@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./static/styles/root.css">
     <link rel="stylesheet" href="./static/styles/fonts.css">
     <link rel="stylesheet" href="./static/assets/icons/regular-icon-font-free/lineicons.css">
+    <link rel="stylesheet" href="./static/assets/icons/fontawesome-free-6.5.2-web/css/all.min.css">
 </head>
 <body>
     <div class="signup_container">
@@ -21,7 +22,7 @@
                 <p>Welcome to Uniform Center, your one-stop solution for all uniform needs. Sign up to access your dashboard and manage your account. </p>
             </div>
             <div class="auth_footer">
-                <p>2026 Uniform Center. All rights reserved.</p>
+                <p><span class="fa-regular fa-copyright"></span>2026 Uniform Center. All rights reserved.</p>
             </div>
         </div>
         <div class="signup_row">
@@ -42,14 +43,14 @@
                     </div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="phone">Enter email</label>
+                            <label for="email">Enter email</label>
                             <input type="text" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Password</label>
+                            <label for="password">Password</label>
                             <div class="input-container">
-                                <input type="password" placeholder="Enter password">
-                                <span class="lni lni-eye"></span>
+                                <input id="password" class="password" type="password" placeholder="Enter password">
+                                <span id="togglePassword" class="password-toggle fa fa-eye"></span>
                             </div>
                         </div>
                     </div>
@@ -62,5 +63,6 @@
             </div>
         </div>
     </div>
+    <script src="./static/scripts/pass_toggle.js"></script>
 </body>
 </html>

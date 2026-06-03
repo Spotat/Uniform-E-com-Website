@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../static/styles/animations.css">
     <link rel="stylesheet" href="../static/styles/fonts.css">
     <link rel="stylesheet" href="../static/assets/icons/regular-icon-font-free/lineicons.css">
+    <link href="https://cdn.lineicons.com/5.1/line/lineicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/assets/icons/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- <link href="https://cdn.lineicons.com/5.1/solid/lineicons-solid.css" rel="stylesheet"> -->
 </head>
 <body>
     <header class="header">
@@ -23,7 +26,7 @@
             <a href="#" class="active"><span class="lni lni-dashboard-square-1"></span> Dashboard</a>
             <a href="./orders.html"><span class="lni lni-basket-shopping-3"></span> Orders</a>
             <a href="./inventory.html"><span class="lni lni-box-closed"></span> Inventory</a>
-            <a href="#"><span class="lni lni-bar-chart-4"></span> Analytics</a>
+            <a href="./analytics.html"><span class="lni lni-bar-chart-4"></span> Analytics</a>
             <a href="#"><span class="lni lni-gear-1"></span> Settings</a>
         </nav>
         <div class="profile_container">
@@ -69,6 +72,38 @@
                             <p>789</p>
                         </div>
                     </div>
+                    <div class="analytics_card animate-on-scroll">
+                        <span class="lni lni-bar-chart-4"></span>
+                        <div class="card_body">
+                            <h3>Revenue Growth</h3>
+                            <p>+12% vs last month</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics_card animate-on-scroll">
+                        <span class="lni lni-pie-chart-2"></span>
+                        <div class="card_body">
+                            <h3>Avg Order Value</h3>
+                            <p>KES 1,234</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics_card animate-on-scroll">
+                        <span class="lni lni-star-fat"></span>
+                        <div class="card_body">
+                            <h3>Top Product</h3>
+                            <p>Sweater Set</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics_card animate-on-scroll">
+                        <span class="fa fa-triangle-exclamation"></span>
+                        <div class="card_body">
+                            <h3>Low Stock</h3>
+                            <p>5 items</p>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- <div class="dash_analytics">
                     <div class="analytics_card">
@@ -101,6 +136,17 @@
                     </div>
                 </div> -->
             </div>
+            <div class="chart_container">
+                <!-- Chart containers -->
+                <div id="revenueChart"></div>
+                <div id="orderValueChart"></div>
+                <div id="topProductsChart"></div>
+                <div id="lowStockChart"></div>
+                <!-- <canvas id="revenueChart"></canvas>
+                <canvas id="orderValueChart"></canvas>
+                <canvas id="topProductsChart"></canvas>
+                <canvas id="lowStockChart"></canvas> -->
+            </div>
             <div class="product_container">
                 <div class="product_container_header">
                     <h2>Product Management</h2>
@@ -109,20 +155,20 @@
                             <input type="text" placeholder="Search products...">
                             <span class="lni lni-search-1"></span>
                         </div>
-                        <button class="add_product_btn"><span class="lni lni-plus"></span> Add Product</button>
+                        <button id="openModalBtn" class="add_product_btn"><span class="lni lni-plus"></span> Add Product</button>
                     </div>
                 </div>
                 <div class="product_category_tabs_container">
-                    <div class="product_category_tab active">All Products <span>242</span></div>
-                    <div class="product_category_tab">Sweaters <span>50</span></div>
-                    <div class="product_category_tab">Jumpers <span>120</span></div>
-                    <div class="product_category_tab">T-shirts <span>20</span></div>
-                    <div class="product_category_tab">Tie's <span>32</span></div>
-                    <div class="product_category_tab">Socks <span>20</span></div>
+                    <div class="product_category_tab active" data-category="all">All Products <span></span></div>
+                    <div class="product_category_tab" data-category="sweaters">Sweaters <span></span></div>
+                    <div class="product_category_tab" data-category="jumpers">Jumpers <span></span></div>
+                    <div class="product_category_tab" data-category="tshirts">T-shirts <span></span></div>
+                    <div class="product_category_tab" data-category="blazers">Blazers & Suits <span></span></div>
+                    <div class="product_category_tab" data-category="socks">Socks <span></span></div>
                 </div>
                 <div class="product_list" id="productsContainer">
                     
-                    <div class="product_card animate-on-scroll">
+                    <div class="product_card animate-on-scroll" data-category="sweaters">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>45</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -160,7 +206,7 @@
                             <button class="add_to_cart_btn untilt-on-scroll"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card animate-on-scroll">
+                    <div class="product_card animate-on-scroll" data-category="sweaters">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>102</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -201,7 +247,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card animate-on-scroll">
+                    <div class="product_card animate-on-scroll" data-category="blazers">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>20</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -239,7 +285,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card animate-on-scroll">
+                    <div class="product_card animate-on-scroll" data-category="blazers">
                         <div class="stock_level_overlay">
                             <p>Inv Level: <b>54</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -277,7 +323,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card animate-on-scroll">
+                    <div class="product_card animate-on-scroll" data-category="sweaters">
                         <div class="stock_level_overlay">
                             <p class="stockOut"><b>Out of Stock</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -318,7 +364,7 @@
                             <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
                         </div>
                     </div>
-                    <div class="product_card animate-on-scroll">
+                    <div class="product_card animate-on-scroll" data-category="jumpers">
                         <div class="stock_level_overlay">
                             <p class="stockOut"><b>Out of Stock</b></p>
                             <!-- <p>Stk Level: <b>54 remaining</b></p> -->
@@ -357,14 +403,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="pagination"></div>
             </div>
         </section>
         <section class="invoice_section" id="cartPanel">
             <h2>Invoice<span>0</span></h2>
             <div class="table_section" id="cartList">
                 <div class="error_cont">
-                    <span class="lni lni-basket-shopping-3"></span>
-                    <!-- <span class="lni lni-folder-1"></span> -->
+                    <!-- <span class="lni lni-basket-shopping-3"></span> -->
+                    <span class="lni lni-cart-1"></span>
                     <p>You have no items in cart. <a href="#">Start shopping</a></p>
                 </div>
             </div>
@@ -403,7 +451,7 @@
         </section>
     </main>
 
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" style="display: none;">
         <div class="modal_container">
             <div class="modal_header">
                 <!-- <h2>Customer Info</h2> -->
@@ -426,6 +474,41 @@
                     </div>
                 </div>
                 <button type="submit">Complete Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close lni lni-xmark"></span>
+            <h2>Add New Product</h2>
+            <form id="addProductForm">
+            <label>Product Name</label>
+            <input type="text" id="productName" required>
+
+            <label>Description</label>
+            <textarea id="productDescription" required></textarea>
+
+            <label>Price</label>
+            <input type="number" id="productPrice" step="0.01" required>
+
+            <label>Category</label>
+            <select id="productCategory" required>
+                <option value="sweaters">Sweaters</option>
+                <option value="jumpers">Jumpers</option>
+                <option value="blazers">Blazers</option>
+                <option value="tshirts">T-shirts</option>
+                <option value="ties">Tie's</option>
+                <option value="socks">Socks</option>
+            </select>
+
+            <label>Image URL</label>
+            <input type="text" id="productImage" placeholder="path/to/image.jpg">
+
+            <label>Available Sizes (comma separated)</label>
+            <input type="text" id="productSizes" placeholder="S,M,L,XL">
+
+            <button type="submit">Add Product</button>
             </form>
         </div>
     </div>
@@ -532,9 +615,9 @@
                 } else {
                     cart.push({ name: productName, price: productPrice, size: selectedSize, image: productImage, quantity: 1 });
                 }
-                alert("Product added to cart successfully");
                 renderCart();
                 updateInvoiceSummary();
+                alert("Product added to cart successfully");
             });
         });
 
@@ -700,8 +783,162 @@
         */
 
     </script>
+    <script>
+        const tabs = document.querySelectorAll(".product_category_tab");
+        const products = document.querySelectorAll(".product_card");
+        const paginationContainer = document.getElementById("pagination");
 
+        const itemsPerPage = 9;
+        let currentPage = 1;
+        let currentCategory = "all";
+
+        // Count updater
+        function updateCounts() {
+            tabs.forEach(tab => {
+                const category = tab.getAttribute("data-category");
+                const span = tab.querySelector("span");
+
+                if (category === "all") {
+                span.textContent = products.length;
+                } else {
+                const count = Array.from(products).filter(
+                    product => product.getAttribute("data-category") === category
+                ).length;
+                span.textContent = count;
+                }
+            });
+        }
+
+        // Render products for current category + page
+        function renderProducts(page, category) {
+            const filtered = Array.from(products).filter(product =>
+                category === "all" ? true : product.getAttribute("data-category") === category
+            );
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+
+            filtered.forEach((product, index) => {
+                product.style.display = (index >= start && index < end) ? "block" : "none";
+            });
+
+            // Hide products not in category
+            products.forEach(product => {
+                if (!filtered.includes(product)) {
+                product.style.display = "none";
+                }
+            });
+
+            renderPagination(filtered.length, page);
+        }
+
+        // Render pagination buttons
+        function renderPagination(totalItems, page) {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            paginationContainer.innerHTML = "";
+
+            if (totalPages <= 1) return; // no pagination needed
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement("button");
+                btn.textContent = i;
+                btn.classList.add("page-btn");
+                if (i === page) btn.classList.add("active");
+
+                btn.addEventListener("click", () => {
+                currentPage = i;
+                renderProducts(currentPage, currentCategory);
+                });
+
+                paginationContainer.appendChild(btn);
+            }
+        }
+
+        // Tab click handler
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                currentCategory = tab.getAttribute("data-category");
+                currentPage = 1; // reset to first page
+                renderProducts(currentPage, currentCategory);
+            });
+        });
+
+        // Initial setup
+        updateCounts();
+        renderProducts(currentPage, currentCategory);
+    </script>
+    <!-- <script>
+        const modal = document.getElementById("productModal");
+        const openBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.querySelector(".close");
+        const form = document.getElementById("addProductForm");
+        const productsContainer = document.getElementById("productsContainer");
+
+        openBtn.onclick = () => modal.style.display = "grid";
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+
+            const name = document.getElementById("productName").value;
+            const desc = document.getElementById("productDescription").value;
+            const price = document.getElementById("productPrice").value;
+            const category = document.getElementById("productCategory").value;
+            const image = document.getElementById("productImage").value || "../static/assets/images/default.jpg";
+            const sizesInput = document.getElementById("productSizes").value;
+            const sizes = sizesInput.split(",").map(s => s.trim()).filter(s => s);
+
+            // Build sizes HTML
+            let sizesHTML = "";
+            sizes.forEach((size, idx) => {
+                sizesHTML += `<div class="size ${idx === 0 ? "active" : ""}"><p>${size}</p></div>`;
+            });
+
+            // Create new product card
+            const card = document.createElement("div");
+            card.classList.add("product_card");
+            card.setAttribute("data-category", category);
+            card.innerHTML = `
+                <div class="stock_level_overlay">
+                <p>Inv Level: <b>0</b></p>
+                </div>
+                <img src="${image}" alt="Product Image">
+                <div class="product_card_body">
+                <h3>${name}</h3>
+                <p class="product_description">${desc}</p>
+                <div class="size_container">
+                    <p>Select size:</p>
+                    <div class="size-group">${sizesHTML}</div>
+                </div>
+                <div class="product_actions">
+                    <p>KES ${parseFloat(price).toFixed(2)}</p>
+                    <div class="product_actions_row">
+                    <button class="edit_btn"><span class="lni lni-pencil-1"></span> Edit</button>
+                    <button class="delete_btn"><span class="lni lni-trash"></span> Delete</button>
+                    </div>
+                </div>
+                <button class="add_to_cart_btn"><span class="lni lni-cart-1"></span> Add to Cart</button>
+                </div>
+            `;
+
+            productsContainer.appendChild(card);
+            modal.style.display = "none";
+            form.reset();
+        });
+    </script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../static/scripts/navigation.js"></script>
+    <script src="../static/scripts/modal.js"></script>
+    <script src="../static/scripts/chart-intergration.js"></script>
+    <!-- <script src="../static/scripts/tabs.js"></script> -->
+    <script src="../static/scripts/pagination.js"></script>
     <script src="../static/scripts/scroll_animation.js"></script>
 </body>
 </html>

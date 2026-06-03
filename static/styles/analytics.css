@@ -1,0 +1,75 @@
+.analytics_tabs {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    /* background-color: #fff; */
+    /* border-radius: 30px; */
+}
+.tab-btn.active {
+    background-color: var(--color-alt);
+    /* background-color: #f4f4f4; */
+    color: white;
+    text-wrap: nowrap;
+    border: 1px solid var(--color-alt);
+}
+.tab-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 4px 8px;
+    color: #888;
+    border: 1px solid #888;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}
+
+/* Tabs container */
+.analytics_tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0.5rem;
+  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
+}
+
+.analytics_tabs::-webkit-scrollbar {
+  display: none; /* hide scrollbar for cleaner look */
+}
+
+.tab-btn {
+  flex: 0 0 auto; /* prevent shrinking */
+  padding: 10px 20px;
+  border: none;
+  background: #f4f4f4;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Tab content area */
+.tab-content {
+  display: none;
+  width: 100%;
+  height: 300px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content > div {
+  width: 300px;
+  height: 400px !important;   /* give ECharts a height */
+}
+@media (max-width: 768px) {
+  .tab-content > div {
+    height: 250px; /* smaller height for mobile */
+  }
+}
