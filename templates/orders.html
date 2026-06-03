@@ -95,14 +95,8 @@
                 </table>
             </div>
         </section>
-        <section class="invoice_section">
+        <section class="invoice_section" id="orderDetails">
             <h2>Order Details</h2>
-            <div class="order_item_details">
-                <p class="customer_name">
-                    John Doe
-                </p>
-                <p class="date">28 Mar 2026, 12:30</p>
-            </div>
             <!-- <h2>Order ID <span>#0000</span></h2> -->
             <table class="invoice_table" style="display: none;">
                 <thead>
@@ -132,14 +126,42 @@
                     <!-- More orders -->
                 </tbody>
             </table>
-            <div class="table_section" id="orderDetails">
+            <div class="table_section">
+                <!-- <div class="order_item_details">
+                    <p class="customer_name">
+                        John Doe
+                    </p>
+                    <p class="date">28 Mar 2026, 12:30</p>
+                </div>
+                <div class="order_items_container">
+                    <h2>Order Items</h2>
+                    <div class="order_item_row cart_item">
+                        <div class="cart_grid">
+                            <div class="cart_image">
+                                <img src="../static/assets/images/4814337043efc982173ec5fdeeb0965e.jpg" alt="name">
+                            </div>
+                            <div class="cart_info">
+                                <div class="cart_info_body">
+                                    <h4>Formal blazer with school crest embroidery</h4>
+                                    <div class="cart_info_specs order_item_specs">
+                                        <p>Size: XL</p>
+                                        <p>x2</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart_item_price">
+                                <p>KES 1099.99</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
                 <div class="error_cont">
                     <!-- <span class="lni lni-basket-shopping-3"></span> -->
                     <span class="lni lni-cart-1"></span>
                     <p>Select an order to view it's details or create a new order.<a href="#">Create an order</a></p>
                 </div>
             </div>
-            <div class="payment_container">
+            <div class="payment_container" style="display: none;">
                 <h2>Invoice Summary</h2>
                 <div class="summary_container">
                     <div class="summary_list">
@@ -190,76 +212,299 @@
                 id: "#12346",
                 customer: "Bob Johnson",
                 status: "Completed",
-                total: "KES 11,149"
+                date: "2024-06-02",
+                total: "KES 11,149",
+                subTotal: "9,620",
+                tax: "1,529.84",
+                total: "KES 11,149",
+                orders: [
+                    {
+                        name: "Formal blazer with school crest embroidery",
+                        image: "../static/assets/images/99532372fa39688782a8fedb335efce5.jpg",
+                        size: "XL",
+                        quantity: 2,
+                        price: "KES 1099.99"
+                    },
+                    {
+                        name: "Classic white shirt with button-down collar",
+                        image: "../static/assets/images/4814337043efc982173ec5fdeeb0965e.jpg",
+                        size: "L",
+                        quantity: 3,
+                        price: "KES 799.99"
+                    }
+                ]
             },
             {
                 id: "#12347",
                 customer: "Alice Smith",
                 status: "Pending",
-                total: "KES 5,200"
+                date: "2024-06-03",
+                total: "KES 5,200",
+                subTotal: "4,500",
+                tax: "700",
+                orders: [
+                    {
+                        name: "Navy blue pleated skirt with adjustable waistband",
+                        image: "../static/assets/images/1cc11e2696027de3d1f55948da02d1d9.jpg",
+                        size: "M",
+                        quantity: 1,
+                        price: "KES 1,499.99"
+                    },
+                    {
+                        name: "Red and white striped tie with embroidered logo",
+                        image: "../static/assets/images/7b027145c4e8a04d2b67f67f723358a6.jpg",
+                        size: "One Size",
+                        quantity: 4,
+                        price: "KES 299.99"
+                    }
+                ]
             },
             {
                 id: "#12348",
                 customer: "Charlie Brown",
                 status: "Processing",
-                total: "KES 7,890"
+                date: "2024-06-02",
+                total: "KES 7,890",
+                subTotal: "6,890",
+                tax: "1,000",
+                orders: [
+                    {
+                        name: "Grey V-neck sweater with school emblem",
+                        image: "../static/assets/images/67f61094f5c8463dbc848edade6e914d.jpg",
+                        size: "L",
+                        quantity: 2,
+                        price: "KES 1,199.99"
+                    },
+                    {
+                        name: "Black dress pants with adjustable waistband",
+                        image: "../static/assets/images/4814337043efc982173ec5fdeeb0965e.jpg",
+                        size: "XL",
+                        quantity: 3,
+                        price: "KES 1,499.99"
+                    }
+                ]
             },
             {
                 id: "#12349",
                 customer: "Diana Prince",
                 status: "Completed",
-                total: "KES 15,300"
+                date: "2024-06-03",
+                total: "KES 15,300",
+                subTotal: "13,800",
+                tax: "1,500",
+                orders: [
+                    {
+                        name: "White button-down shirt with embroidered logo",
+                        image: "../static/assets/images/87b121c74ee9c42a67f17bae10b0b43c.jpg",
+                        size: "S",
+                        quantity: 4,
+                        price: "KES 899.99"
+                    },
+                    {
+                        name: "Navy blue blazer with school crest embroidery",
+                        image: "../static/assets/images/88ead83242fd89933c4de0b2294ff66a.jpg",
+                        size: "M",
+                        quantity: 2,
+                        price: "KES 1,499.99"
+                    },
+                    {
+                        name: "Grey pleated skirt with adjustable waistband",
+                        image: "../static/assets/images/598fe6b70307d4ee99ad1a8b140f9544.jpg",
+                        size: "L",
+                        quantity: 3,
+                        price: "KES 1,199.99"
+                    }
+                ]
             },
             {
                 id: "#12350",
                 customer: "Ethan Hunt",
                 status: "Cancelled",
-                total: "KES 2,450"
+                date: "2024-06-04",
+                total: "KES 2,450",
+                subTotal: "2,450",
+                tax: "0",
+                orders: [
+                    {
+                        name: "Black dress shoes with non-slip soles",
+                        image: "../static/assets/images/637e6e06ce748a3648cb736407d2e66d.jpg",
+                        size: "42",
+                        quantity: 1,
+                        price: "KES 2,450.00"
+                    }
+                ]
             },
             {
                 id: "#12351",
                 customer: "Fiona Gallagher",
                 status: "Pending",
-                total: "KES 9,600"
+                date: "2024-06-05",
+                total: "KES 9,600",
+                subTotal: "8,000",
+                tax: "1,600",
+                orders: [
+                    {
+                        name: "Red and white striped tie with embroidered logo",
+                        image: "../static/assets/images/692a2a1c3fc6127a6209fc8443108c18.jpg",
+                        size: "One Size",
+                        quantity: 10,
+                        price: "KES 299.99"
+                    }
+                ]
             },
             {
                 id: "#12352",
                 customer: "George Clooney",
                 status: "Completed",
-                total: "KES 12,750"
+                date: "2024-06-06",
+                total: "KES 12,750",
+                subTotal: "10,750",
+                tax: "2,000",
+                orders: [
+                    {
+                        name: "Navy blue blazer with school crest embroidery",
+                        image: "../static/assets/images/973b698dce3f158413721e8dd3fdf5f3.jpg",
+                        size: "L",
+                        quantity: 5,
+                        price: "KES 1,499.99"
+                    },
+                    {
+                        name: "Grey V-neck sweater with school emblem",
+                        image: "../static/assets/images/1856a846d23123fcb89475370507f6e0.jpg",
+                        size: "M",
+                        quantity: 3,
+                        price: "KES 1,199.99"
+                    }
+                ]
             }
         ];
-
 
         const searchInput = document.getElementById("searchInput");
         const tableBody = document.querySelector("#ordersTable tbody");
         const detailsPanel = document.getElementById("orderDetails");
 
-        // Function to render rows (so we can re-render after search)
+        // Render table rows
         function renderRows(filteredOrders) {
         tableBody.innerHTML = ""; // clear existing rows
+
         filteredOrders.forEach(order => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${order.id}</td>
-                <td>${order.customer}</td>
-                <td><span class="status ${order.status.toLowerCase()}">${order.status}</span></td>
-                <td>${order.total}</td>
+            <td>${order.id}</td>
+            <td>${order.customer}</td>
+            <td><span class="status ${order.status.toLowerCase()}">${order.status}</span></td>
+            <td>${order.total}</td>
             `;
 
-            // Add click event for details
-            row.addEventListener("click", () => {
-            detailsPanel.innerHTML = `
-                <h3>Order ${order.id}</h3>
-                <p><strong>Customer:</strong> ${order.customer}</p>
-                <p><strong>Status:</strong> ${order.status}</p>
-                <p><strong>Total:</strong> ${order.total}</p>
-            `;
-            });
-
+            // Click event to show details
+            row.addEventListener("click", () => renderDetails(order));
             tableBody.appendChild(row);
         });
         }
+
+        // Render order details
+        function renderDetails(order) {
+            // Calculate totals
+            const subTotal = order.orders.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subTotal * 0.16; // example 16% VAT
+            const totalPayments = subTotal + tax;
+            const cash = order.cash || 0;
+            const balance = cash - totalPayments || 0;
+
+            detailsPanel.innerHTML = `
+                <!-- <h2>Order Details</h2> -->
+                <div class="order_item_details">
+                    <p class="customer_name">Customer Name: ${order.customer}</p>
+                    <p class="date">Date: ${order.date || "N/A"}</p>
+                </div>
+                <div class="order_items_container">
+                    <h2>Order Items</h2>
+                    ${order.orders.map(item => `
+                        <div class="order_item_row cart_item">
+                            <div class="cart_grid">
+                                <div class="cart_image">
+                                    <img src="${item.image}" alt="${item.name}">
+                                </div>
+                                <div class="cart_info">
+                                    <div class="cart_info_body">
+                                        <h4>${item.name}</h4>
+                                        <div class="cart_info_specs order_item_specs">
+                                        <p>Size: ${item.size}</p>
+                                        <p>x${item.quantity}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart_item_price">
+                                    <p>KES ${item.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join("")}
+                </div>
+
+                <div class="payment_container">
+                    <h2>Invoice Summary</h2>
+                    <div class="summary_container">
+                        <div class="summary_list">
+                            <h3>Sub Total</h3>
+                            <p id="subTotal"><b>KES</b> ${order.subTotal}</p>
+                        </div>
+                        <div class="summary_list">
+                            <h3>Tax</h3>
+                            <p id="tax"><b>KES</b> ${order.tax}</p>
+                        </div>
+                        <div class="summary_list" id="bold">
+                            <h3>Total Payments</h3>
+                            <p id="total"><b>KES</b> ${order.total}</p>
+                        </div>
+                        <div class="summary_list">
+                            <h3>Cash</h3>
+                            <p><b>KES</b> ${cash.toFixed(2)}</p>
+                        </div>
+                        <div class="summary_list">
+                            <h3>Balance</h3>
+                            <p><b>KES</b> ${balance.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <button><span class="lni lni-printer"></span> Print Invoice</button>
+                </div>
+            `;
+        }
+
+
+        /*function renderDetails(order) {
+        detailsPanel.innerHTML = `
+            <div class="order_item_details">
+            <p class="customer_name">${order.customer}</p>
+            <p class="date">${order.date || "N/A"}</p>
+            </div>
+            <div class="order_items_container">
+            <h2>Order Items</h2>
+            ${order.orders.map(item => `
+                <div class="order_item_row cart_item">
+                <div class="cart_grid">
+                    <div class="cart_image">
+                    <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart_info">
+                    <div class="cart_info_body">
+                        <h4>${item.name}</h4>
+                        <div class="cart_info_specs order_item_specs">
+                        <p>Size: ${item.size}</p>
+                        <p>x${item.quantity}</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="cart_item_price">
+                    <p>${item.price}</p>
+                    </div>
+                </div>
+                </div>
+            `).join("")}
+            </div>
+        `;
+        }*/
+
 
         // Initial render
         renderRows(orders);

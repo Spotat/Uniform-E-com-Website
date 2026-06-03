@@ -13,3 +13,15 @@
     border-radius: 5px;
     overflow: hidden;
 }
+
+.order_items_container {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    /* margin-top: 1rem; */
+}
+
+.order_item_specs {
+    color: #888;
+    margin-top: 5px;
+}

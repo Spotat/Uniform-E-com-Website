@@ -21,6 +21,7 @@
     font-family: 'Futura', sans-serif;
 }
 button {
+    text-wrap: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,6 +29,9 @@ button {
     cursor: pointer;
     font-size: 14px !important;
     font-weight: 500 !important;
+}
+h2 {
+    text-wrap: nowrap;
 }
 body {
     width: 100%;
@@ -663,6 +667,7 @@ canvas {
 }
 .customer_name {
     font-weight: 300;
+    color: #333;
 }
 .invoice_section h2 {
     font-size: 1.5rem !important;
@@ -769,6 +774,14 @@ thead th:last-child {
   overflow-x: auto;          /* horizontal scroll if needed */
 }
 
+/*  */
+
+.order_items_container > h2 {
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    color: #555;
+    /* text-transform: uppercase; */
+}
 /*  */
 .table_section {
     width: 100%;
