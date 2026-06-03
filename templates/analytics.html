@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics</title>
     <link rel="stylesheet" href="../static/styles/dashboard.css">
+    <link rel="stylesheet" href="../static/styles/dashboard_mobile.css">
     <link rel="stylesheet" href="../static/styles/components.css">
     <link rel="stylesheet" href="../static/styles/analytics.css">
     <link rel="stylesheet" href="../static/styles/root.css">
@@ -30,10 +31,10 @@
                     <p>Close</p>
                 </div>
             </div>
-            <a href="#" class="active"><span class="lni lni-dashboard-square-1"></span> Dashboard</a>
+            <a href="#"><span class="lni lni-dashboard-square-1"></span> Dashboard</a>
             <a href="./orders.html"><span class="lni lni-basket-shopping-3"></span> Orders</a>
             <a href="./inventory.html"><span class="lni lni-box-closed"></span> Inventory</a>
-            <a href="#"><span class="lni lni-bar-chart-4"></span> Analytics</a>
+            <a href="#" class="active"><span class="lni lni-bar-chart-4"></span> Analytics</a>
             <a href="#"><span class="lni lni-gear-1"></span> Settings</a>
         </nav>
         <div class="profile_container">
@@ -47,20 +48,47 @@
         </div>
     </header>
 
-    <div class="analytics_tabs">
+    <div class="header-section" style="display: none;">
+        <div class="header-row">
+            <h2>Analysis & Statistics</h2>
+            <p>Gauge your product perfomance and analytics here. Based on your KPI's.</p>
+        </div>
+        <div class="header-row">
+            <button><span class="fa fa-file"></span> Export</button>
+        </div>
+    </div>
+    <section class="main-section">
+        <div class="main-row">
+            <div class="graph">
+                <div id="orderValue" style="width: 100%;"></div>
+            </div>
+            <div class="list">
+                <div id="lowStocks" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="main-row">
+            <div class="graph">
+                <div id="revenueChart" style="width: 100%;"></div>
+            </div>
+            <div class="list">
+                <div id="topProductsChart" style="width: 100%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="analytics_tabs" style="display: none;">
         <button class="tab-btn active" data-tab="revenue">Revenue Growth</button>
         <button class="tab-btn" data-tab="orderValue">Average Order Value</button>
         <button class="tab-btn" data-tab="topProducts">Top Selling Products</button>
         <button class="tab-btn" data-tab="lowStock">Low Stock Alerts</button>
-    </div>
+    </div> -->
 
-    <div class="tab-content active" id="revenue"><div id="revenueChart"></div></div>
-    <div class="tab-content" id="orderValue"><div id="orderValueChart"></div></div>
-    <div class="tab-content" id="topProducts"><div id="topProductsChart"></div></div>
-    <div class="tab-content" id="lowStock"><div id="lowStockChart"></div></div>
+    <!-- <div class="tab-content active" id="revenue" style="display: none;"><div id="revenueChart" style="width: 600px; height: 300px;"></div></div>
+    <div class="tab-content" id="orderValue" style="display: none;"><div id="orderValueChart"></div></div>
+    <div class="tab-content" id="topProducts" style="display: none;"><div id="topProductsChart"></div></div>
+    <div class="tab-content" id="lowStock" style="display: none;"><div id="lowStockChart"></div></div> -->
 
 
-    <script src="../static/scripts/chart-intergration.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     <script>
         const tabBtns = document.querySelectorAll(".tab-btn");
@@ -77,6 +105,98 @@
                 });
             });
         });
+    </script>
+    <script>
+        // Revenue Growth (Line Chart)
+        var revenueChart = echarts.init(document.getElementById('revenueChart'));
+        var topProductsChart = echarts.init(document.getElementById('topProductsChart'));
+        var lowStockChart = echarts.init(document.getElementById('lowStocks'));
+        var orderValueChart = echarts.init(document.getElementById('orderValue'));
+
+        var revenueOption = {
+            title: { text: 'Revenue Growth' },
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['Jan','Feb','Mar','Apr','May'] },
+            yAxis: { type: 'value' },
+            series: [{
+                name: 'Revenue',
+                data: [12000, 15000, 18000, 17000, 20000],
+                type: 'line',
+                smooth: true,
+                lineStyle: { color: '#27ae60' },
+                areaStyle: { color: 'rgba(39,174,96,0.2)' }
+            }]
+        };
+        revenueChart.setOption(revenueOption);
+
+        // Top Products (Pie Chart)
+        var topProductsOption = {
+            title: { text: 'Top Selling Products', left: 'center' },
+            tooltip: { trigger: 'item' },
+            series: [{
+                name: 'Products',
+                type: 'pie',
+                radius: '50%',
+                data: [
+                { value: 50, name: 'Sweaters' },
+                { value: 30, name: 'Jumpers' },
+                { value: 20, name: 'Blazers' },
+                { value: 10, name: 'T-shirts' }
+                ],
+                emphasis: {
+                itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0,0,0,0.5)' }
+                }
+            }]
+        };
+        topProductsChart.setOption(topProductsOption);
+
+        // Low Stock Alerts (Doughnut Chart)
+        var lowStockOption = {
+            title: { text: 'Low Stock Alerts', left: 'center' },
+            tooltip: { trigger: 'item' },
+            series: [{
+                name: 'Low Stock',
+                type: 'pie',
+                radius: ['40%', '70%'], // doughnut style
+                data: [
+                { value: 2, name: 'Sweaters' },
+                { value: 1, name: 'Jumpers' },
+                { value: 1, name: 'Blazers' },
+                { value: 1, name: 'Socks' }
+                ],
+                itemStyle: {
+                color: function(params) {
+                    const colors = ['#e74c3c','#c0392b','#d35400','#f39c12'];
+                    return colors[params.dataIndex];
+                }
+                }
+            }]
+        };
+        lowStockChart.setOption(lowStockOption);
+
+        // Average Order Value (Bar Chart)
+        var orderValueOption = {
+            title: { text: 'Average Order Value' },
+            tooltip: { trigger: 'axis' },
+            xAxis: { type: 'category', data: ['Jan','Feb','Mar','Apr','May'] },
+            yAxis: { type: 'value' },
+            series: [{
+                name: 'Order Value',
+                data: [1100, 1200, 1250, 1300, 1234],
+                type: 'bar',
+                itemStyle: { color: '#3498db' }
+            }]
+        };
+        orderValueChart.setOption(orderValueOption);
+
+
+        window.addEventListener('resize', () => {
+            revenueChart.resize();
+            orderValueChart.resize();
+            topProductsChart.resize();
+            lowStockChart.resize();
+        });
+
     </script>
 
 </body>

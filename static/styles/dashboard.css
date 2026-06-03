@@ -9,6 +9,7 @@
     --color-accent:  rgb(204, 120, 56);
     /* --color-accent:  rgb(3, 42, 10); */
     --color-primary: white;
+    /* --color-alt: rgb(255, 118, 13); */
     /* --color-alt: rgb(91, 145, 4); */
     /* --color-alt: #2c3e50; */
     /* --color-alt: rgb(0, 95, 197); */
@@ -430,7 +431,7 @@ canvas {
     padding: 2px 4px;
     border-radius: 5px;
     /* border-radius: 50%; */
-    background-color: #333;
+    background-color: #555;
     color: white;
     margin-left: 10px;
 }
@@ -642,9 +643,9 @@ canvas {
     height: fit-content;
     /* height: 100vh; */
     background-color: #fff;
-    padding: 20px;
-    border-radius: 0%;
-    /* border-radius: 5px; */
+    padding: 1rem;
+    /* border-radius: 0%; */
+    border-radius: 5px;
     position: sticky;
     top: 16%;
     right: 0%;

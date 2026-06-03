@@ -1,0 +1,125 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.settings-main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+.settings-tab-container {
+    width: 100%;
+    height: fit-content;
+    /* min-height: 100vh; */
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 6rem;
+    left: 0%;
+    overflow: hidden;
+    /* gap: 1rem; */
+}
+.setting-tab {
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    /* grid-template-columns: 1fr 3fr; */
+    gap: 1rem;
+    align-items: center;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+.setting-tab span {
+    font-size: 20px;
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: all .2s ease;
+}
+.setting-tab h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    /* margin-bottom: 10px; */
+}
+.setting-tab p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #888;
+}
+/*  */
+.setting-tab.active,
+.setting-tab:hover {
+    background-color: #f4f4f4d0;
+}
+.setting-tab.active span,
+.setting-tab:hover span {
+    color: white;
+    background-color: var(--color-alt);
+}
+
+
+/*  */
+.set-tab-content {
+    width: 100%;
+    /* max-width: 90vw; */
+    height: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 1rem;
+}
+.set-tab-content h2 {
+    font-weight: 400;
+}
+.set-tab-content form input {
+    width: 100%;
+    border: 2px solid #eee;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+
+@media (max-width: 576px) {
+    .settings-main {
+        padding: 1rem;
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    .settings-tab-container {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+    .setting-tab {
+        width: 100%;
+    }
+    .setting-tab h3 {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .setting-tab p {
+        font-size: 12px;
+        font-weight: 100;
+    }
+    .set-tab-content {
+        width: 100%;
+        height: fit-content;
+        min-height: 100%;
+    }
+    .set-tab-content h2 {
+        font-size: 1.25rem !important;
+    }
+}

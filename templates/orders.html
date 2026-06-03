@@ -205,6 +205,7 @@
     </main>
 
     <script src="../static/scripts/navigation.js"></script>
+    <script src="../static/scripts/scroll_animation.js"></script>
     <script>
 
         const orders = [
@@ -216,7 +217,7 @@
                 total: "KES 11,149",
                 subTotal: "9,620",
                 tax: "1,529.84",
-                total: "KES 11,149",
+                //total: "KES 11,149",
                 orders: [
                     {
                         name: "Formal blazer with school crest embroidery",
@@ -420,7 +421,7 @@
                 <div class="order_items_container">
                     <h2>Order Items</h2>
                     ${order.orders.map(item => `
-                        <div class="order_item_row cart_item">
+                        <div class="order_item_row cart_item animate-on-scroll">
                             <div class="cart_grid">
                                 <div class="cart_image">
                                     <img src="${item.image}" alt="${item.name}">
@@ -435,14 +436,14 @@
                                     </div>
                                 </div>
                                 <div class="cart_item_price">
-                                    <p>KES ${item.price}</p>
+                                    <p>${item.price}</p>
                                 </div>
                             </div>
                         </div>
                     `).join("")}
                 </div>
 
-                <div class="payment_container">
+                <div class="payment_container animate-on-scroll">
                     <h2>Invoice Summary</h2>
                     <div class="summary_container">
                         <div class="summary_list">
